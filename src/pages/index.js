@@ -1,21 +1,50 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+const IndexPage = ({ data: { home, curators } }) => {
+  return (
+    <div>
+      <SEO title="Home" />
+      <h3>Page Info:</h3>
+      <span className="block mb-3">title: { home.title }</span>
+      <span className="block mb-3">heroTitle: { home.heroTitle }</span>
+      <span className="block mb-3">heroBlurb: { home.heroBlurb }</span>
+      <span className="block mb-3">heroImage: { home.heroImage.url }</span>
+      <span className="block mb-3">heroImage Alt: { home.heroImage.alt }</span> 
+
+      <h3>Curators:</h3>
+      <span className="block mb-3">Featured curator: { curators.edges[0].node.name }</span>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+  )
+}
 
 export default IndexPage
+
+export const query = graphql`
+  query IndexQuery {
+    home: datoCmsHome {
+      title
+      heroTitle
+      heroBlurb
+      heroImage {
+        url
+      }
+    }
+    curators: allDatoCmsCurator(filter: { mainCurator: { eq: true } }) {
+      edges {
+        node {        
+          name
+          blurb
+          image {
+            url
+            alt
+          }
+          slug
+          id
+        }
+      }
+    }
+  }
+`
