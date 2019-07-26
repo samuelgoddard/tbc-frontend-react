@@ -1,16 +1,22 @@
-@import 'partials/_fonts.css';
+@import './partials/_fonts.css';
 
-@tailwind base;
-@tailwind components;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
 
-@import 'partials/_container.css';
-@import 'partials/_headings.css';
-@import 'partials/_link.css';
-@import 'partials/_paragraph.css';
-@import 'partials/_meta.css'; 
+@import './partials/_container.css';
+@import './partials/_headings.css';
+@import './partials/_link.css';
+@import './partials/_paragraph.css';
+@import './partials/_meta.css'; 
 
-@tailwind utilities;
+@import 'tailwindcss/utilities';
 
 body {
   @apply font-sans antialiased bg-off-white text-purplish-grey;
+}
+
+.logo--full {
+  width: 420px;
+
+  @apply text-dark-blue-grey;
 }

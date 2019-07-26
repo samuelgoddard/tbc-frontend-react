@@ -1,19 +1,33 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import SEO from "../components/seo"
 import Teaser from "../components/teaser"
+import Hero from "../components/hero"
+import Img from "gatsby-image"
 
 const IndexPage = ({ data: { home, curators } }) => {
   return (
     <div>
       <SEO title="Home" />
 
+      {/* Hero Section */}
+      <div className="mb-12 md:mb-32 xl:mb-40">
+        <div className="container">
+          <Hero
+            title={home.heroTitle}
+            blurb={home.heroBlurb}
+            img={home.heroImage.fluid}
+          />
+        </div>
+      </div>
+      {/* Hero Section End */}
+
+      {/* Style Edit Section */}
       <div className="mb-12 md:mb-32 xl:mb-40">
         <div className="container">
           <div className="flex flex-wrap">
             <div className="w-full md:w-1/2 md:pr-16 lg:pr-28">
-            {/* <Img fluid={home.heroImage.fluid} /> */}
               <Teaser
                 heading="roof party lo-fi live-edge man braid, freegan."
                 meta="fashion"
@@ -55,6 +69,31 @@ const IndexPage = ({ data: { home, curators } }) => {
           </div>
         </div>
       </div>
+      {/* Style Edit Section End */}
+
+      {/* Meet the curator */}
+      {curators.edges.map(({ node }, index) => (
+        <div key={index} className="mb-12 md:mb-32 xl:mb-40">
+          <div className="container">
+            <div className="w-full md:w-11/12 lg:w-9/12 mx-auto">
+              <div className="flex flex-wrap md:-mx-8 items-center">
+                <div className="w-full md:w-3/5 md:px-8 mb-6 md:mb-0">
+                  {/* <lazy-image :src="curator.image.url" :alt="curator.image.alt" classList="border-l-12 border-pink w-full" /> */}
+
+                  <Img fluid={node.image.fluid} key={node.image.fluid} alt="Placeholder Image" className="mb-5 w-full" />
+                </div>
+                
+                <div className="w-full md:w-2/5 md:px-8">
+                  <h2 className="font-serif text-2xl">meet the curator.</h2>
+                  <p className="text-sm mb-4 lg:pr-12">{ node.blurb }</p>
+                  <Link to="/" className="underline">learn more</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+      {/* End Meet the cutator */}
     </div>
   )
 }
@@ -81,7 +120,9 @@ export const query = graphql`
           blurb
           image {
             url
-            alt
+            fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsSizes
+            }
           }
           slug
           id

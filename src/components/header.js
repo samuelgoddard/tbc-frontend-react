@@ -11,9 +11,9 @@ const Header = () => (
           <div role="navigation" aria-label="Site Navigation">
             <nav>
               <ul className="flex items-end sm:items-center">
-                <li><Link className="block p-2 sm:mx-2" to="/edit">the edit</Link></li>
-                <li><Link className="block p-2 sm:mx-2" to="/style">style</Link></li>
-                <li><Link className="block p-2 sm:mx-2" to="/about">about</Link></li>
+                <li><Link activeClassName="underline" className="block p-2 sm:mx-2" to="/edit">the edit</Link></li>
+                <li><Link activeClassName="underline" className="block p-2 sm:mx-2" to="/style">style</Link></li>
+                <li><Link activeClassName="underline" className="block p-2 sm:mx-2" to="/about">about</Link></li>
               </ul>
             </nav>
           </div>
