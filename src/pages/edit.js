@@ -32,7 +32,7 @@ const EditPage = ({ data: { posts, categories } }) => {
             <div className="flex flex-wrap -mx-2">
               {categories.edges.map(({ node }, index) => (
                 <div key={index} className="w-1/2 md:w-full xl:w-1/2 px-2">
-                  <Link to={`/categories/${node.slug}`} className="link">{node.title}</Link>
+                  <Link to={`/categories/${node.slug}`} className="link py-2">{node.title}</Link>
                 </div>
               ))}
             </div>
@@ -62,7 +62,7 @@ const EditPage = ({ data: { posts, categories } }) => {
           <div className="w-10/12 md:w-2/3 lg:w-4/12 xl:w-3/12 md:px-8 md:mt-12 lg:mt-24 mb-12 lg:mb-0">
             <h2 className="font-serif text-2xl">welcome to your creative life</h2>
             <p className="text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum placeat, deleniti amet nisi dolore non voluptates mollitia unde atque tempora aliquam ad.</p>
-            <Link to="/about" className="underline">learn more</Link>
+            <Link to="/about" className="underline">more about tbc</Link>
           </div>
           
           <div className="w-full lg:w-8/12 xl:w-9/12 md:px-8">
