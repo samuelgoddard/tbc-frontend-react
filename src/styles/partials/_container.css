@@ -1,0 +1,11 @@
+.container {
+  @apply w-full mx-auto px-5;
+
+  max-width: 1440px;
+}
+
+@screen sm {
+  .container {
+    @apply px-10;
+  }
+}

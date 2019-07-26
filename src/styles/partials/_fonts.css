@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Untitled Sans';
+  src: url('../../fonts/UntitledSans-Regular.woff2') format('woff2'),
+      url('../../fonts/UntitledSans-Regular.woff') format('woff');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Untitled Sans';
+  src: url('../../fonts/UntitledSans-Medium.woff2') format('woff2'),
+      url('../../fonts/UntitledSans-Medium.woff') format('woff');
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Canela';
+  src: url('../../fonts/Canela-Light.woff2') format('woff2'),
+      url('../../fonts/Canela-Light.woff') format('woff');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}

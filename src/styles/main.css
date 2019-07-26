@@ -1,0 +1,16 @@
+@import 'partials/_fonts.css';
+
+@tailwind base;
+@tailwind components;
+
+@import 'partials/_container.css';
+@import 'partials/_headings.css';
+@import 'partials/_link.css';
+@import 'partials/_paragraph.css';
+@import 'partials/_meta.css'; 
+
+@tailwind utilities;
+
+body {
+  @apply font-sans antialiased bg-off-white text-purplish-grey;
+}

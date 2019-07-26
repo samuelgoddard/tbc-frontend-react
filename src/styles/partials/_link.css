@@ -1,0 +1,11 @@
+a {
+  @apply text-purple-brown;
+}
+
+a.nuxt-link-exact-active {
+  @apply underline;
+}
+
+a:hover, a:focus {
+  @apply text-purple-brown;
+}

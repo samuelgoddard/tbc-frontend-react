@@ -1,33 +1,26 @@
-// import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import Logo from "./logo"
+import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <header className="bg-purple-700 mb-4">
-    <div className="container py-4">
-      <div className="flex flex-wrap">
-        <div>
-          <h1 className="text-white">
-            <AniLink fade to="/" preventScrollJump>{siteTitle}</AniLink>
-          </h1>
-        </div>
-        <div className="ml-auto text-white">
-          <AniLink fade to="/edit">the edit</AniLink>
-          <AniLink fade to="/style">style</AniLink>
-          <AniLink fade to="/about">about</AniLink>
+const Header = () => (
+  <header className="container py-10">
+    <div className="flex flex-wrap items-center">
+      <Logo classList="text-beige hover:text-dark-blue-grey focus:text-dark-blue-grey transition"></Logo>
+      <div className="flex-1">
+        <div className="flex justify-end sm:justify-center">
+          <div role="navigation" aria-label="Site Navigation">
+            <nav>
+              <ul className="flex items-end sm:items-center">
+                <li><Link className="block p-2 sm:mx-2" to="/edit">the edit</Link></li>
+                <li><Link className="block p-2 sm:mx-2" to="/style">style</Link></li>
+                <li><Link className="block p-2 sm:mx-2" to="/about">about</Link></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </div>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

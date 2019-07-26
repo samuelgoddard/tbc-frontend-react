@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `tbc.`,
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam..`,
+    author: `@samuelgoddard`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -14,13 +14,12 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-postcss`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `tbc-website`,
+        short_name: `tbc`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -28,44 +27,29 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-postcss`,
+    { 
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+        // develop: true, // Enable while using `gatsby develop`
+        tailwind: true, 
+        whitelist: ['whitelist'], // Don't remove this selector
+        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+      }
+    },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: '986c1f6a5143e089716a40c7a0b248',
       },
-    },{
-      resolve: "gatsby-plugin-transition-link",
-      options: {
-        layout: require.resolve(`./src/components/Layout.js`)
-      },
     },
-    // `gatsby-source-datocms`,
-    // {
-    //   options: {
-    //     // You can find your read-only API token under the Settings > API tokens
-    //     // section of your administrative area:
-    //     apiToken: `986c1f6a5143e089716a40c7a0b248`,
-
-    //     // If you are working on development/staging environment, you might want to
-    //     // preview the latest version of records instead of the published one:
-    //     previewMode: false,
-
-    //     // Disable automatic reloading of content when some change occurs on DatoCMS:
-    //     disableLiveReload: false,
-
-    //     // Custom API base URL
-    //     apiUrl: 'https://site-api.datocms.com',
-
-    //     // Setup locale fallbacks
-    //     // In this example, if some field value is missing in Italian, fall back to English
-    //     localeFallbacks: {
-    //       it: ['en'],
-    //     },
-    //   },
-    // },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+          component: require.resolve(`./src/components/layout.js`)
+      }
+    }
   ],
 }
