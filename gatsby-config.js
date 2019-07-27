@@ -47,6 +47,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `tbc.uk`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-layout`,
       options: {
           component: require.resolve(`./src/components/layout.js`)

@@ -1,9 +1,9 @@
 import React from "react"
-// import { Link } from "gatsby"
+import Img from "gatsby-image"
 
 import SEO from "../components/seo"
 
-const StylePage = () => (
+const StylePage = ({ data: { style } }) => (
   <div>
     <SEO title="Style" />
     {/* First block start */}
@@ -13,17 +13,24 @@ const StylePage = () => (
           <div className="w-full lg:w-8/12 xl:w-9/12 md:px-8">
             <div className="flex flex-wrap">
               <div className="w-1/3 self-end pr-5 sm:pr-8 md:pr-10 xl:pr-16">
-                {/* <lazy-image src="https://placedog.net/650/900" alt="Placeholder Image" caption="Lorem ipsum dolor sit amet, consect adipisicing elit" /> */}
+                {style.heroSupportingImage && (
+                  <Img fluid={style.heroSupportingImage.fluid} key={style.heroSupportingImage.heroSupportingImageCaption} alt="Placeholder Image" className="w-full md:mb-4" />
+                )}
+                {style.heroSupportingImageCaption &&(
+                  <div className="hidden md:block">
+                    <span className="text-sm">{style.heroSupportingImageCaption}</span>
+                  </div>
+                )}
               </div>
               <div className="w-2/3">
-                {/* <lazy-image src="https://placedog.net/750/1200" alt="Placeholder Image" classList="border-l-12 border-pink lg:mb-8" /> */}
+                <Img fluid={style.heroImage.fluid} key={style.heroImage.fluid} alt="Placeholder Image" className="w-full border-l-12 border-pink lg:mb-8" />
               </div>
             </div>
           </div>
 
           <div className="w-full lg:w-4/12 xl:w-3/12 md:px-8 mt-12 lg:mt-24 mb-12 lg:mb-0">
-            <h2 className="font-serif text-2xl">quinoa portland pickled polaroid occupy tumblr</h2>
-            <p className="text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum placeat, deleniti amet nisi dolore non voluptates mollitia unde atque tempora aliquam ad.</p>
+            <h2 className="font-serif text-2xl">{style.heroTitle}</h2>
+            <span className="text-sm" dangerouslySetInnerHTML={{__html: style.heroBlurb }}></span>
           </div>
         </div>
         
@@ -32,10 +39,7 @@ const StylePage = () => (
             <div className="flex flex-wrap">
               <div className="hidden sm:block w-1/3 self-end">
               </div>
-              <div className="w-full sm:w-2/3">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia illum, quisquam quis quae ullam quibusdam ipsa nihil modi repudiandae, aut quasi nostrum fugiat sapiente deleniti, delectus facere quod eligendi culpa.</p>
-                
-                <p className="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident enim ipsam libero, est amet inventore corrupti ratione soluta accusamus a porro pariatur dolorum. Nesciunt ullam perferendis reprehenderit. Distinctio, ad quibusdam!</p>
+              <div className="w-full sm:w-2/3" dangerouslySetInnerHTML={{__html: style.heroAdditionalBlurb }}>
               </div>
             </div>
           </div>
@@ -49,18 +53,25 @@ const StylePage = () => (
       <div className="container">
         <div className="flex flex-wrap lg:-mx-10">
           <div className="w-full lg:w-1/2 lg:px-10 lg:mt-24 mb-10 md:mb-12">
-            {/* <lazy-image src="https://placedog.net/900/740" alt="Placeholder Image" caption="Lorem ipsum dolor sit amet, consect adipisicing elit." /> */}
+            <Img fluid={style.contentLeftImage.fluid} key={style.contentLeftImage.fluid} alt="Content Image" className="mb-4" />
+            { style.contentLeftImageCaption && (
+              <span class="text-sm">{style.contentLeftImageCaption}</span>
+            )}
           </div>
           <div className="w-full lg:w-1/2 lg:px-10">
             <div className="flex flex-wrap -mx-3 md:-mx-10">
               <div className="w-2/3 lg:w-1/2 px-3 md:px-10">
-                {/* <lazy-image src="https://placedog.net/600/900" alt="Placeholder Image" classList="mb-4" /> */}
-                <h2 className="font-serif text-2xl">street art occupy pok pok salvia</h2>
+                <Img fluid={style.contentMiddleImage.fluid} key={style.contentMiddleImage.fluid} alt="Content Image" className="mb-4" />
+                <h2 className="font-serif text-2xl">{style.contentMiddleTitle}</h2>
 
-                <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia illum, quisquam quis quae ullam quibusdam ipsa nihil modi repudiandae, aut quasi nostrum fugiat sapiente deleniti, delectus facere quod eligendi culpa.</p>
+                <span className="text-sm" dangerouslySetInnerHTML={{__html: style.contentMiddleBlurb }}></span>
               </div>
               <div className="w-1/3 lg:w-1/2 px-3 md:px-10 lg:mt-24">
-                {/* <lazy-image src="https://placedog.net/650/900" alt="Placeholder Image" caption="Lorem ipsum dolor sit amet, consect adipisicing elit." /> */}
+                <Img fluid={style.contentRightImage.fluid} key={style.contentRightImage.fluid} alt="Content Image" className="mb-4" />
+
+                { style.contentRightImageCaption && (
+                  <span class="text-sm">{style.contentRightImageCaption}</span>
+                )}
               </div>
             </div>
           </div>
@@ -75,12 +86,12 @@ const StylePage = () => (
         <div className="w-full md:w-11/12 lg:w-9/12 mx-auto">
           <div className="flex flex-wrap md:-mx-8 items-center">
             <div className="w-full md:w-2/5 md:px-8 order-2 md:order-1">
-              <h2 className="font-serif text-2xl">to be created.</h2>
-              <p className="text-sm mb-4 lg:pr-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quasi alias nobis impedit veritatis. Voluptate quis nisi aliquam, sunt ullam totam omnis ex distinctio. Lorem ipsumdolor sit amet consecteteur adipicising</p>
+              <h2 className="font-serif text-2xl">{style.footerTitle}</h2>
+              <span className="text-sm mb-4 lg:pr-12" dangerouslySetInnerHTML={{__html: style.footerBlurb }}></span>
             </div>
 
             <div className="w-full md:w-3/5 md:px-8 mb-6 md:mb-0 order-1 md:order-2">
-              {/* <lazy-image src="https://placedog.net/900/800" alt="Placeholder Image" classList="border-l-12 border-pink w-full" /> */}
+              <Img fluid={style.footerImage.fluid} key={style.footerImage.fluid} alt={style.footerTitle} className="border-l-12 border-pink w-full" />
             </div>
           </div>
         </div>
@@ -89,5 +100,59 @@ const StylePage = () => (
     {/* Thid Block End */}
   </div>
 )
+
+export const query = graphql`
+  query styleQuery {
+    style: datoCmsStyle {
+      title
+      heroTitle
+      heroBlurb
+      heroAdditionalBlurb
+      heroImage {
+        url
+        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsSizes
+        }
+      }
+      heroSupportingImage {
+        url
+        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsSizes
+        }
+      }
+      heroSupportingImageCaption
+      contentLeftImage {
+        url
+        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsSizes
+        }
+      }
+      contentLeftImageCaption
+      contentMiddleImage {
+        url
+        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsSizes
+        }
+      }
+      contentMiddleTitle
+      contentMiddleBlurb
+      contentRightImage {
+        url
+        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsSizes
+        }
+      }
+      contentRightImageCaption
+      footerTitle
+      footerBlurb
+      footerImage {
+        url
+        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsSizes
+        }
+      }
+    }
+  }
+`
 
 export default StylePage

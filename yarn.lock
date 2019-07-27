@@ -671,7 +671,7 @@
     core-js "^2.6.5"
     regenerator-runtime "^0.13.2"
 
-"@babel/preset-env@^7.0.0", "@babel/preset-env@^7.4.1":
+"@babel/preset-env@^7.0.0", "@babel/preset-env@^7.4.1", "@babel/preset-env@^7.4.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.5.5.tgz#bc470b53acaa48df4b8db24a570d6da1fef53c9a"
   integrity sha512-GMZQka/+INwsMz1A5UEql8tG015h5j/qjptpKY2gJ7giy8ohzU710YciJB5rcKsWGWHiW3RUnHib0E5/m3Tp3A==
@@ -2647,7 +2647,7 @@ charenc@~0.0.1:
   resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
   integrity sha1-wKHS86cJLgN3S/qD8UwPxXkKhmc=
 
-cheerio@^1.0.0-rc.2:
+cheerio@^1.0.0-rc.2, cheerio@^1.0.0-rc.3:
   version "1.0.0-rc.3"
   resolved "https://registry.yarnpkg.com/cheerio/-/cheerio-1.0.0-rc.3.tgz#094636d425b2e9c0f4eb91a46c05630c9a1a8bf6"
   integrity sha512-0td5ijfUPuubwLUu0OBoe98gZj8C/AA+RW3v67GPlGOrvxWjZmBXiBCRU+I8VEiNyJzjth40POfHiz2RB3gImA==
@@ -5536,7 +5536,7 @@ gatsby-source-datocms@^2.1.15:
     query-string "5.0.1"
     request-promise-native "1.0.7"
 
-gatsby-source-filesystem@^2.1.6:
+gatsby-source-filesystem@^2.0.27, gatsby-source-filesystem@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.6.tgz#ced6b7b9d02a74849ef2f5dce8d501839cd66e54"
   integrity sha512-Om05JfbYLWn54as5+7O6Dci273V4fbS0FqhxNVNkixAh6Vib5Yi3kBr8L+5l29tF2vB0dr3UPMk95tF9LuHwEw==
@@ -5556,6 +5556,17 @@ gatsby-source-filesystem@^2.1.6:
     read-chunk "^3.0.0"
     valid-url "^1.0.9"
     xstate "^3.1.0"
+
+gatsby-source-instagram@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-instagram/-/gatsby-source-instagram-0.5.1.tgz#fbec84c5c2816522808d6c792d48f80149267dd7"
+  integrity sha512-/TPaPsUagdTBa8LDtAsuffnbCr+QbZxT1BIgCzOUfRvZFfu1iywle86ugiT2NkKDZNa6hz5LnUyF8mDqjQyMTQ==
+  dependencies:
+    "@babel/preset-env" "^7.4.5"
+    "@babel/runtime" "^7.4.5"
+    axios "^0.19.0"
+    cheerio "^1.0.0-rc.3"
+    gatsby-source-filesystem "^2.0.27"
 
 gatsby-telemetry@^1.1.6:
   version "1.1.6"

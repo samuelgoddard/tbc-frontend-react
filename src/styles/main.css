@@ -20,3 +20,25 @@ body {
 
   @apply text-dark-blue-grey;
 }
+
+.insta-item {
+  max-height: 250px;
+}
+
+@screen md {
+  .insta-item {
+    max-height: 220px;
+  }
+}
+
+@screen lg {
+  .insta-item {
+    max-height: 240px;
+  }
+}
+
+@screen xl {
+  .insta-item {
+    max-height: 300px;
+  }
+}

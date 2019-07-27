@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import SEO from "../components/seo"
 
-const EditPage = ({ data: { posts, categories } }) => {
+const EditPage = ({ data: { edits, categories } }) => {
   return (
   <div>
     <SEO title="Edit" />
@@ -16,13 +16,13 @@ const EditPage = ({ data: { posts, categories } }) => {
               <h2 className="font-serif text-2xl">the edit</h2>
               <p className="text-sm pr-24 md:pr-6 lg:pr-24">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum placeat, deleniti amet nisi dolore non volupd.</p>
 
-              {/* <h2>@DEBUG testing posts here</h2>
+              {/* <h2>@DEBUG testing edits here</h2>
               <ul>
                 <li
-                  v-for="(post, index) in allPosts"
-                  :key="post.id">
+                  v-for="(edit, index) in alledits"
+                  :key="edit.id">
 
-                  <Link :to="'/edit/' + post.slug">{{ post.title }}</Link>
+                  <Link :to="'/edit/' + edit.slug">{{ edit.title }}</Link>
                 </li>
               </ul> */}
             </div>
@@ -80,10 +80,10 @@ const EditPage = ({ data: { posts, categories } }) => {
     </div>
     {/* Second block end */}
 
-    {/* POSTS LOOP <div className="mb-8">
-      {posts.edges.map(({ node: post }) => (
-        <div key={post.id}>
-          <p>{post.title}</p>
+    {/* editS LOOP <div className="mb-8">
+      {edits.edges.map(({ node: edit }) => (
+        <div key={edit.id}>
+          <p>{edit.title}</p>
         </div>
       ))}
     </div> */}
@@ -94,8 +94,8 @@ const EditPage = ({ data: { posts, categories } }) => {
 export default EditPage
 
 export const query = graphql`
-query postsQuery {
-  posts: allDatoCmsPost {
+query editsQuery {
+  edits: allDatoCmsEdit {
     edges {
       node {
         id
