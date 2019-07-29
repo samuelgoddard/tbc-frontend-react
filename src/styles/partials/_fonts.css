@@ -24,3 +24,13 @@
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'BasisGrotesque';
+  src: url('../fonts/BasisGrotesque-Bold.woff2') format('woff2'),
+      url('../fonts/BasisGrotesque-Bold.woff') format('woff');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+

@@ -55,7 +55,7 @@ const StylePage = ({ data: { style } }) => (
           <div className="w-full lg:w-1/2 lg:px-10 lg:mt-24 mb-10 md:mb-12">
             <Img fluid={style.contentLeftImage.fluid} key={style.contentLeftImage.fluid} alt="Content Image" className="mb-4" />
             { style.contentLeftImageCaption && (
-              <span class="text-sm">{style.contentLeftImageCaption}</span>
+              <span className="text-sm">{style.contentLeftImageCaption}</span>
             )}
           </div>
           <div className="w-full lg:w-1/2 lg:px-10">
@@ -70,7 +70,7 @@ const StylePage = ({ data: { style } }) => (
                 <Img fluid={style.contentRightImage.fluid} key={style.contentRightImage.fluid} alt="Content Image" className="mb-4" />
 
                 { style.contentRightImageCaption && (
-                  <span class="text-sm">{style.contentRightImageCaption}</span>
+                  <span className="text-sm">{style.contentRightImageCaption}</span>
                 )}
               </div>
             </div>

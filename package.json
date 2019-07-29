@@ -29,6 +29,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-pose": "^4.0.8",
+    "react-pose-text": "^3.1.0",
     "tailwindcss-transition": "^1.0.5"
   },
   "devDependencies": {

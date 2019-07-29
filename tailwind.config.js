@@ -124,6 +124,13 @@ module.exports = {
         'Arial',
         'sans-serif',
       ],
+      logo: [
+        'BasisGrotesque',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Arial',
+        'sans-serif',
+      ],
       serif: [
         'Canela',
         'Georgia',
@@ -149,6 +156,7 @@ module.exports = {
       xl: '1.75rem', // 28px
       '2xl': '2.5rem', // 40px
       '3xl': '3.25rem', // 52px
+      '4xl': '4.25rem', // 52px
     },
     fontWeight: {
       hairline: '100',

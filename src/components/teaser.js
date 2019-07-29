@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import { motion } from "framer-motion"
 
 const Teaser = ({ img, meta, heading, linkText, small, naked, link }) => (
-  <motion.a
+  <motion.button
     className="block"
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95, opacity: 0 }}
@@ -32,7 +32,7 @@ const Teaser = ({ img, meta, heading, linkText, small, naked, link }) => (
       <Link to={link} className="underline">{linkText}</Link>
     )}
   </div>
-  </motion.a>
+  </motion.button>
 )
 
 

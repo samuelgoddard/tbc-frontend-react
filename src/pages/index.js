@@ -6,6 +6,8 @@ import Teaser from "../components/teaser"
 import Hero from "../components/hero"
 import Img from "gatsby-image"
 
+// import posed from "react-pose"
+
 const IndexPage = ({ data: { home, curators, insta } }) => {
   return (
     <div>
