@@ -7,7 +7,6 @@ import Hero from "../components/hero"
 import Img from "gatsby-image"
 
 const IndexPage = ({ data: { home, curators, insta } }) => {
-  console.log(insta)
   return (
     <div>
       <SEO title="Home" />
@@ -33,6 +32,7 @@ const IndexPage = ({ data: { home, curators, insta } }) => {
                 heading={home.styleEdit[0].title}
                 meta={home.styleEdit[0].categories[0] ? home.styleEdit[0].categories[0].title : null}
                 img={home.styleEdit[0].image.fluid}
+                link="/about"
               />
             </div>
             <div className="w-full md:w-1/2">
