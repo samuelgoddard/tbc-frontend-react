@@ -1,38 +1,36 @@
 import React from "react"
 import PropTypes from "prop-types"
-// import { motion, AnimatePresence } from 'framer-motion'
+
+import { motion, AnimatePresence } from 'framer-motion'
 
 import Header from "./header"
 import Footer from "./footer"
 
-// const duration = 0.35
+const duration = 0.35
 
-// const variants = {
-//   initial: {
-//     opacity: 0,
-//   },
-//   enter: {
-//     opacity: 1,
-//     transition: {
-//       duration: duration,
-//       delay: duration,
-//       when: 'beforeChildren',
-//     },
-//   },
-//   exit: {
-//     opacity: 0,
-//     transition: { duration: duration },
-//   },
-// }
+const variants = {
+  initial: {
+    opacity: 0,
+  },
+  enter: {
+    opacity: 1,
+    transition: {
+      duration: duration,
+      delay: duration,
+      when: 'beforeChildren',
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: duration },
+  },
+}
 
 const Layout = ({ children, location }) => {
   return (
     <>
       <Header />
-
-
-      {children}
-      {/* <AnimatePresence>
+      <AnimatePresence>
         <motion.main
           key={location.pathname}
           variants={variants}
@@ -43,7 +41,7 @@ const Layout = ({ children, location }) => {
         >
           {children}
         </motion.main>
-      </AnimatePresence> */}
+      </AnimatePresence>
       {/* <main>{children}</main> */}
       <Footer />
     </>
