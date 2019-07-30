@@ -1,30 +1,13 @@
-
-
-import React from 'react'
-import posed, { PoseGroup } from 'react-pose'
-import Layout from './src/components/layout'
+import React from "react";
+import Layout from "./src/components/Layout";
 
 import "./src/styles/main.css"
 
-const transitionDelay = 100;
+const transitionDelay = 350;
 
-const Transition = posed.div({
-  enter: { opacity: 1, delay: 500, beforeChildren: true, transition: { duration: 500 }},
-  exit: { opacity: 0, delay: 500, transition: { duration: 500 }},
-})
-
-export const replaceComponentRenderer = ({ props, ...other }) => {
-  const { component } = props.pageResources
-  return (
-    <Layout>
-      <PoseGroup>
-        <Transition key={props.location.key}>
-          {React.createElement(component, props)}
-        </Transition>
-      </PoseGroup>
-    </Layout>
-  )
-}
+export const wrapPageElement = ({ element, props }) => {
+  return <Layout {...props}>{element}</Layout>;
+};
 
 export const shouldUpdateScroll = ({
   routerProps: { location },
