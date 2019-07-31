@@ -1,9 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Teaser from "../components/teaser"
+import Img from "gatsby-image"
 
 import SEO from "../components/seo"
 
-const EditPage = ({ data: { edits, categories } }) => {
+const EditPage = ({ data: { edit, edits, categories } }) => {
   return (
   <div>
     <SEO title="Edit" />
@@ -13,26 +15,19 @@ const EditPage = ({ data: { edits, categories } }) => {
         <div className="flex flex-wrap md:-mx-6">
           <div className="w-full md:w-1/3 md:px-6 mt-16 lg:mt-24">
             <div className="mb-12">
-              <h2 className="font-serif text-2xl">the edit</h2>
-              <p className="text-sm pr-24 md:pr-6 lg:pr-24">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum placeat, deleniti amet nisi dolore non volupd.</p>
-
-              {/* <h2>@DEBUG testing edits here</h2>
-              <ul>
-                <li
-                  v-for="(edit, index) in alledits"
-                  :key="edit.id">
-
-                  <Link :to="'/edit/' + edit.slug">{{ edit.title }}</Link>
-                </li>
-              </ul> */}
+              <h2 className="font-serif text-2xl">{ edit.heading }</h2>
+              <span className="text-sm pr-24 md:pr-6 lg:pr-24" dangerouslySetInnerHTML={{__html:edit.blurb}}></span>
             </div>
 
             <h3 className="text-black text-base font-sans font-bold">choose a category&nbsp;&nbsp;-</h3>
 
             <div className="flex flex-wrap -mx-2">
+              <div className="w-1/2 md:w-full xl:w-1/2 px-2">
+                <Link to={`/edit/`} activeClassName="underline" className="link py-2">all</Link>
+              </div>
               {categories.edges.map(({ node }, index) => (
                 <div key={index} className="w-1/2 md:w-full xl:w-1/2 px-2">
-                  <Link to={`/categories/${node.slug}`} className="link py-2">{node.title}</Link>
+                  <Link to={`/edit/${node.slug}`} className="link py-2">{node.title}</Link>
                 </div>
               ))}
             </div>
@@ -40,14 +35,17 @@ const EditPage = ({ data: { edits, categories } }) => {
           </div>
           <div className="w-full md:w-2/3 md:px-6">
             <div className="flex flex-wrap -mx-3 sm:-mx-5 lg:-mx-8 mt-24 md:mt-0">
-              {/* <div 
-                className="w-1/2 px-3 sm:px-5 lg:px-8"
-                :className="{ '-mt-12 md:-mt-32' : index % 2 }"
-                v-for="(article, index) in articles"
-                :key="article.id"
-              >
-                <Teaser :imgUrl="article.imgUrl" naked />
-              </div> */}
+              {edits.edges.map(({ node }, index) => (
+                <div key={index} className={`${ index % 2 ? '-mt-12 md:-mt-32 w-1/2 px-3 sm:px-5 lg:px-8' : 'w-1/2 px-3 sm:px-5 lg:px-8' }`}>
+                  <Teaser
+                    link={node.link}
+                    img={node.image.fluid}
+                    caption={node.title}
+                    naked
+                    externalLink
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -60,17 +58,19 @@ const EditPage = ({ data: { edits, categories } }) => {
       <div className="container">
         <div className="flex flex-wrap md:-mx-8">
           <div className="w-10/12 md:w-2/3 lg:w-4/12 xl:w-3/12 md:px-8 md:mt-12 lg:mt-24 mb-12 lg:mb-0">
-            <h2 className="font-serif text-2xl">welcome to your creative life</h2>
-            <p className="text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum placeat, deleniti amet nisi dolore non voluptates mollitia unde atque tempora aliquam ad.</p>
+            <h2 className="font-serif text-2xl">{ edit.supportingSectionHeading }</h2>
+            <span className="text-sm" dangerouslySetInnerHTML={{__html:edit.supportingSectionBlurb}}></span>
             <Link to="/about" className="underline">more about tbc</Link>
           </div>
           
           <div className="w-full lg:w-8/12 xl:w-9/12 md:px-8">
             <div className="flex flex-wrap">
               <div className="w-2/3">
-                {/* <lazy-image src="https://placedog.net/900/1000" alt="Placeholder Image" classList="border-l-12 border-pink" /> */}
+                <Img fluid={edit.supportingSectionImage.fluid} alt="Placeholder Image" className="border-l-12 border-pink w-full" />
+
               </div>
               <div className="w-1/3 self-end pl-5 sm:pl-8 md:pl-10 xl:pl-16">
+                <Img fluid={edit.supportingSectionSupportingImage.fluid} alt="Placeholder Image" />
                 {/* <lazy-image src="https://placedog.net/650/900" alt="Placeholder Image" /> */}
               </div>
             </div>
@@ -79,14 +79,6 @@ const EditPage = ({ data: { edits, categories } }) => {
       </div>
     </div>
     {/* Second block end */}
-
-    {/* editS LOOP <div className="mb-8">
-      {edits.edges.map(({ node: edit }) => (
-        <div key={edit.id}>
-          <p>{edit.title}</p>
-        </div>
-      ))}
-    </div> */}
   </div>
   )
 }
@@ -95,12 +87,37 @@ export default EditPage
 
 export const query = graphql`
 query editsQuery {
+  edit: datoCmsEditPage {
+    heading
+    blurb
+    supportingSectionHeading
+    supportingSectionBlurb
+    supportingSectionImage {
+      url
+      fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+        ...GatsbyDatoCmsSizes
+      }
+    }
+    supportingSectionSupportingImage {
+      url
+      fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+        ...GatsbyDatoCmsSizes
+      }
+		}
+  }
   edits: allDatoCmsEdit {
     edges {
       node {
         id
         title
+        link
         slug
+        image {
+          url
+          fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+            ...GatsbyDatoCmsSizes
+          }
+        }
       }
     }
   }

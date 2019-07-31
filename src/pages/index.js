@@ -34,7 +34,7 @@ const IndexPage = ({ data: { home, curators, insta } }) => {
                 heading={home.styleEdit[0].title}
                 meta={home.styleEdit[0].categories[0] ? home.styleEdit[0].categories[0].title : null}
                 img={home.styleEdit[0].image.fluid}
-                link="/about"
+                link="/edit"
               />
             </div>
             <div className="w-full md:w-1/2">
@@ -54,6 +54,7 @@ const IndexPage = ({ data: { home, curators, insta } }) => {
                         meta={home.styleEdit[1].categories[0] ? home.styleEdit[1].categories[0].title : null}
                         img={home.styleEdit[1].image.fluid}
                         small
+                        link={`edit/${home.styleEdit[1].categories[0].slug ? home.styleEdit[1].categories[0].slug : null}`}
                       />
                     </div>
                   </div>
@@ -64,6 +65,7 @@ const IndexPage = ({ data: { home, curators, insta } }) => {
                     meta={home.styleEdit[2].categories[0] ? home.styleEdit[0].categories[0].title : null}
                     img={home.styleEdit[2].image.fluid}
                     small
+                    link={`edit/${home.styleEdit[2].categories[0].slug ? home.styleEdit[0].categories[0].slug : null}`}
                   />
                 </div>
               </div>
@@ -152,6 +154,7 @@ export const query = graphql`
         title
         categories {
           title
+          slug
         }
         image {
           url
