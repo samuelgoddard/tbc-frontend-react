@@ -14,7 +14,7 @@ const Teaser = ({ img, meta, heading, linkText, small, naked, link, externalLink
       ease: "easeInOut"
     }}
   >
-  <div className="m-teaser relative mb-3 sm:mb-6 lg:mb-12">
+  <div className="m-teaser relative mb-3 sm:mb-6 lg:mb-12 text-left">
     {caption && (
       <span class="absolute bottom-0 left-0 mb-4 ml-4 z-10 text-white text-left">{ caption }</span>
     )}
