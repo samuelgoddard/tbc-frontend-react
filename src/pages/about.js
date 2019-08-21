@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 
 const AboutPage = ({ data: { about, curators }}) => (
   <div>
-    <SEO title="About" />
+    <SEO meta={about.seoMetaTags} />
     {/* First block start */}
     <div className="overflow-x-hidden mb-12 md:mb-32 xl:mb-40">
       <div className="container">
@@ -77,6 +77,9 @@ export const query = graphql`
     about: datoCmsAbout {
       heroTitle
       heroBlurb
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
       heroImage {
         fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsSizes

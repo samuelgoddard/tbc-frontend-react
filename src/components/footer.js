@@ -1,5 +1,6 @@
 import React from "react"
 import Logo from "./logo"
+import { Link } from "gatsby"
 
 const Footer = () => (
   <footer>
@@ -15,7 +16,7 @@ const Footer = () => (
               <p className="text-black text-sm leading-snug mb-0">
                 <span className="block">newsletter coming soon&hellip;</span>
                 {/* <a href="#" className="text-black underline">newsletter coming soon...</a><br/> */}
-                we use <a href="#" className="text-black underline">cookies</a>
+                we use <Link activeClassName="underline" className="underline text-black" to="/cookies">cookies</Link>
               </p>
             </div>
             <div className="ml-auto text-right">

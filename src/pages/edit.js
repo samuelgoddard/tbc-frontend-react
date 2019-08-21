@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 const EditPage = ({ data: { edit, edits, categories } }) => {
   return (
   <div>
-    <SEO title="Edit" />
+    <SEO meta={edit.seoMetaTags} />
     {/* First block start */}
     <div className="mb-12 md:mb-32 xl:mb-40">
       <div className="container">
@@ -38,7 +38,7 @@ const EditPage = ({ data: { edit, edits, categories } }) => {
           <div className="w-full md:w-2/3 md:px-6">
             <div className="flex flex-wrap -mx-3 sm:-mx-5 lg:-mx-8 mt-24 md:mt-0">
               {edits.edges.map(({ node }, index) => (
-                <div key={index} className={`${ index % 2 ? '-mt-12 md:-mt-32 w-1/2 px-3 sm:px-5 lg:px-8' : 'w-1/2 px-3 sm:px-5 lg:px-8' }`}>
+                <div key={index} className={`${ index % 2 ? '-mt-8 md:-mt-32 w-1/2 px-3 sm:px-5 lg:px-8' : 'w-1/2 px-3 sm:px-5 lg:px-8' }`}>
                   <Teaser
                     link={node.link}
                     img={node.image.fluid}
@@ -91,6 +91,9 @@ export const query = graphql`
 query editsQuery {
   edit: datoCmsEditPage {
     heading
+    seoMetaTags {
+      ...GatsbyDatoCmsSeoMetaTags
+    }
     blurb
     supportingSectionHeading
     supportingSectionBlurb
@@ -107,13 +110,16 @@ query editsQuery {
       }
 		}
   }
-  edits: allDatoCmsEdit {
+  edits: allDatoCmsEdit(
+    filter: { soft: { eq: true } }
+  ) {
     edges {
       node {
         id
         title
         link
         slug
+        soft
         image {
           url
           fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {

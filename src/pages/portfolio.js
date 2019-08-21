@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 
 const StylePage = ({ data: { style } }) => (
   <div>
-    <SEO title="Style" />
+    <SEO meta={style.seoMetaTags} />
     {/* First block start */}
     <div className="overflow-x-hidden mb-12 md:mb-32 xl:mb-40">
       <div className="container">
@@ -18,7 +18,7 @@ const StylePage = ({ data: { style } }) => (
                 )}
                 {style.heroSupportingImageCaption &&(
                   <div className="hidden md:block">
-                    <span className="text-sm">{style.heroSupportingImageCaption}</span>
+                    <span className="text-sm" dangerouslySetInnerHTML={{__html: style.heroSupportingImageCaption }}></span>
                   </div>
                 )}
               </div>
@@ -39,7 +39,7 @@ const StylePage = ({ data: { style } }) => (
             <div className="flex flex-wrap">
               <div className="hidden sm:block w-1/3 self-end">
               </div>
-              <div className="w-full sm:w-2/3" dangerouslySetInnerHTML={{__html: style.heroAdditionalBlurb }}>
+              <div className="w-full sm:w-2/3 md:px-5" dangerouslySetInnerHTML={{__html: style.heroAdditionalBlurb }}>
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@ const StylePage = ({ data: { style } }) => (
           <div className="w-full lg:w-1/2 lg:px-10 lg:mt-24 mb-10 md:mb-12">
             <Img fluid={style.contentLeftImage.fluid} key={style.contentLeftImage.fluid} alt="Content Image" className="mb-4" />
             { style.contentLeftImageCaption && (
-              <span className="text-sm">{style.contentLeftImageCaption}</span>
+              <span className="text-sm" dangerouslySetInnerHTML={{__html: style.contentLeftImageCaption }} ></span>
             )}
           </div>
           <div className="w-full lg:w-1/2 lg:px-10">
@@ -107,6 +107,9 @@ export const query = graphql`
       title
       heroTitle
       heroBlurb
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
       heroAdditionalBlurb
       heroImage {
         url

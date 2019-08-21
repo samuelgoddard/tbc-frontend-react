@@ -1,17 +1,20 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import SEO from "../components/seo"
+// import SEO from "../components/seo"
 import Teaser from "../components/teaser"
 import Hero from "../components/hero"
 import Img from "gatsby-image"
+
+import SEO from "../components/seo"
+
 
 // import posed from "react-pose"
 
 const IndexPage = ({ data: { home, curators, insta } }) => {
   return (
     <div>
-      <SEO title="Home" />
+      <SEO meta={home.seoMetaTags} />
 
       {/* Hero Section */}
       <div className="mb-12 md:mb-32 xl:mb-40">
@@ -39,7 +42,7 @@ const IndexPage = ({ data: { home, curators, insta } }) => {
             </div>
             <div className="w-full md:w-1/2">
               <div className="flex flex-wrap md:h-full -mx-3 sm:-mx-5 md:-mx-6 lg:-mx-10">
-                <div className="w-1/2 px-3 sm:px-5 md:px-6 lg:px-10 h-full">
+                <div className="w-full md:w-1/2 px-3 sm:px-5 md:px-6 lg:px-10 h-full">
                   <div className="flex flex-col h-full">
                     <div className="mb-auto mt-auto">
                       <span className="block text-brownish-grey text-xl lg:text-2xl font-serif flex-1 leading-tight mb-3 lg:mb-0">
@@ -54,18 +57,20 @@ const IndexPage = ({ data: { home, curators, insta } }) => {
                         meta={home.styleEdit[1].categories[0] ? home.styleEdit[1].categories[0].title : null}
                         img={home.styleEdit[1].image.fluid}
                         small
-                        link={`edit/${home.styleEdit[1].categories[0].slug ? home.styleEdit[1].categories[0].slug : null}`}
+                        link="/edit"
+                        // link={`edit/${home.styleEdit[1].categories[0].slug ? home.styleEdit[1].categories[0].slug : null}`}
                       />
                     </div>
                   </div>
                 </div>
-                <div className="w-1/2 px-3 sm:px-5 md:px-6 lg:px-10">
+                <div className="w-full md:w-1/2 px-3 sm:px-5 md:px-6 lg:px-10">
                   <Teaser 
                     heading={home.styleEdit[2].title}
                     meta={home.styleEdit[2].categories[0] ? home.styleEdit[0].categories[0].title : null}
                     img={home.styleEdit[2].image.fluid}
                     small
-                    link={`edit/${home.styleEdit[2].categories[0].slug ? home.styleEdit[0].categories[0].slug : null}`}
+                    link="/edit"
+                    // link={`edit/${home.styleEdit[2].categories[0].slug ? home.styleEdit[0].categories[0].slug : null}`}
                   />
                 </div>
               </div>
@@ -140,6 +145,9 @@ export const query = graphql`
       title
       heroTitle
       heroBlurb
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
       heroImage {
         url
         fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {

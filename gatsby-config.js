@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `tbc.`,
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam..`,
+    description: `welcome to your curated style...`,
     author: `@samuelgoddard`,
   },
   plugins: [
