@@ -5,10 +5,10 @@ import Img from "gatsby-image"
 
 import SEO from "../components/seo"
 
-const EditPage = ({ data: { edit, edits, categories } }) => {
+const EditPage = ({ data: { site, edit, edits, categories } }) => {
   return (
   <div>
-    <SEO meta={edit.seoMetaTags} />
+    <SEO meta={edit.seoMetaTags} favicon={site.faviconMetaTags} />
     {/* First block start */}
     <div className="mb-12 md:mb-32 xl:mb-40">
       <div className="container">
@@ -89,6 +89,11 @@ export default EditPage
 
 export const query = graphql`
 query editsQuery {
+  site: datoCmsSite {
+    faviconMetaTags {
+      ...GatsbyDatoCmsFaviconMetaTags
+    }
+  }
   edit: datoCmsEditPage {
     heading
     seoMetaTags {

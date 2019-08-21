@@ -3,9 +3,9 @@ import Img from "gatsby-image"
 
 import SEO from "../components/seo"
 
-const StylePage = ({ data: { style } }) => (
+const StylePage = ({ data: { site, style } }) => (
   <div>
-    <SEO meta={style.seoMetaTags} />
+    <SEO meta={style.seoMetaTags} favicon={site.faviconMetaTags} />
     {/* First block start */}
     <div className="overflow-x-hidden mb-12 md:mb-32 xl:mb-40">
       <div className="container">
@@ -103,6 +103,11 @@ const StylePage = ({ data: { style } }) => (
 
 export const query = graphql`
   query styleQuery {
+    site: datoCmsSite {
+      faviconMetaTags {
+        ...GatsbyDatoCmsFaviconMetaTags
+      }
+    }
     style: datoCmsStyle {
       title
       heroTitle

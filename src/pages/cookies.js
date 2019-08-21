@@ -2,9 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
 
-const CookiesPage = ({ data: { cookie }}) => (
+const CookiesPage = ({ data: { site, cookie }}) => (
   <div>
-    <SEO meta={cookie.seoMetaTags} />
+    <SEO meta={cookie.seoMetaTags} favicon={site.faviconMetaTags} />
 
     {/* First block start */}
     <div className="overflow-x-hidden mb-12 md:mb-32 xl:mb-40">
@@ -24,6 +24,11 @@ const CookiesPage = ({ data: { cookie }}) => (
 
 export const query = graphql`
 query cookieQuery {
+  site: datoCmsSite {
+    faviconMetaTags {
+      ...GatsbyDatoCmsFaviconMetaTags
+    }
+  }
   cookie: datoCmsCookie {
     content
     seoMetaTags {

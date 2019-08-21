@@ -3,9 +3,9 @@ import React from "react"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 
-const AboutPage = ({ data: { about, curators }}) => (
+const AboutPage = ({ data: { site, about, curators }}) => (
   <div>
-    <SEO meta={about.seoMetaTags} />
+    <SEO meta={about.seoMetaTags} favicon={site.faviconMetaTags} />
     {/* First block start */}
     <div className="overflow-x-hidden mb-12 md:mb-32 xl:mb-40">
       <div className="container">
@@ -74,6 +74,11 @@ const AboutPage = ({ data: { about, curators }}) => (
 
 export const query = graphql`
   query aboutQuery {
+    site: datoCmsSite {
+      faviconMetaTags {
+        ...GatsbyDatoCmsFaviconMetaTags
+      }
+    }
     about: datoCmsAbout {
       heroTitle
       heroBlurb

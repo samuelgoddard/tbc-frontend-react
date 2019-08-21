@@ -8,13 +8,12 @@ import Img from "gatsby-image"
 
 import SEO from "../components/seo"
 
-
 // import posed from "react-pose"
 
-const IndexPage = ({ data: { home, curators, insta } }) => {
+const IndexPage = ({ data: { site, home, curators, insta } }) => {
   return (
     <div>
-      <SEO meta={home.seoMetaTags} />
+      <SEO meta={home.seoMetaTags} favicon={site.faviconMetaTags} />
 
       {/* Hero Section */}
       <div className="mb-12 md:mb-32 xl:mb-40">
@@ -141,6 +140,11 @@ export default IndexPage
 
 export const query = graphql`
   query IndexQuery {
+    site: datoCmsSite {
+      faviconMetaTags {
+        ...GatsbyDatoCmsFaviconMetaTags
+      }
+    }
     home: datoCmsHome {
       title
       heroTitle
