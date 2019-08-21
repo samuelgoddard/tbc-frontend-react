@@ -9,10 +9,10 @@ const StylePage = ({ data: { style } }) => (
     {/* First block start */}
     <div className="overflow-x-hidden mb-12 md:mb-32 xl:mb-40">
       <div className="container">
-        <div className="flex flex-wrap md:-mx-8">
+        <div className="flex flex-wrap flex-row-reverse md:-mx-8">
           <div className="w-full lg:w-8/12 xl:w-9/12 md:px-8">
-            <div className="flex flex-wrap">
-              <div className="w-1/3 self-end pr-5 sm:pr-8 md:pr-10 xl:pr-16">
+            <div className="flex flex-wrap flex-row-reverse">
+              <div className="w-1/3 self-end pl-5 sm:pl-8 md:pl-10 xl:pl-16">
                 {style.heroSupportingImage && (
                   <Img fluid={style.heroSupportingImage.fluid} key={style.heroSupportingImage.heroSupportingImageCaption} alt="Placeholder Image" className="w-full md:mb-4" />
                 )}
@@ -23,7 +23,7 @@ const StylePage = ({ data: { style } }) => (
                 )}
               </div>
               <div className="w-2/3">
-                <Img fluid={style.heroImage.fluid} key={style.heroImage.fluid} alt="Placeholder Image" className="w-full border-l-12 border-pink lg:mb-8" />
+                <Img fluid={style.heroImage.fluid} key={style.heroImage.fluid} alt="Placeholder Image" className="w-full border-r-12 border-pink lg:mb-8" />
               </div>
             </div>
           </div>

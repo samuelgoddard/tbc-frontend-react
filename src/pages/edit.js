@@ -20,7 +20,7 @@ const EditPage = ({ data: { edit, edits, categories } }) => {
                 <span className="text-sm pr-24 md:pr-6 lg:pr-24" dangerouslySetInnerHTML={{__html:edit.blurb}}></span>
               </div>
 
-              <h3 className="text-black text-base font-sans font-bold">choose a category&nbsp;&nbsp;-</h3>
+              {/* <h3 className="text-black text-base font-sans font-bold">choose a category&nbsp;&nbsp;-</h3>
 
               <div className="flex flex-wrap -mx-2">
                 <div className="w-1/2 md:w-full xl:w-1/2 px-2">
@@ -31,7 +31,7 @@ const EditPage = ({ data: { edit, edits, categories } }) => {
                     <Link to={`/edit/${node.slug}`} className="link py-2">{node.title}</Link>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
           </div>

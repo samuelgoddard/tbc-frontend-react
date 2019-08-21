@@ -89,8 +89,8 @@ const IndexPage = ({ data: { home, curators, insta } }) => {
                 
                 <div className="w-full md:w-2/5 md:px-8">
                   <h2 className="font-serif text-2xl">meet the curator.</h2>
-                  <p className="text-sm mb-4 lg:pr-12">{ node.blurb }</p>
-                  <Link to="/" className="underline">learn more</Link>
+                  <p className="text-sm mb-4 lg:pr-12">{ node.blurb.substring(0, 179) }&hellip;</p>
+                  <Link to="/about" className="underline">learn more</Link>
                 </div>
               </div>
             </div>
@@ -98,10 +98,6 @@ const IndexPage = ({ data: { home, curators, insta } }) => {
         </div>
       ))}
       {/* End Meet the cutator */}
-
-
-
-
 
       {/* Instagram Section */}
       <div className="mb-12 md:mb-32 xl:mb-40">
@@ -164,7 +160,9 @@ export const query = graphql`
         }
       }
     }
-    curators: allDatoCmsCurator(filter: { mainCurator: { eq: true } }) {
+    curators: allDatoCmsCurator(
+      filter: { mainCurator: { eq: true } }
+    ) {
       edges {
         node {        
           name

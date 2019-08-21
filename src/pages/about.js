@@ -47,24 +47,27 @@ const AboutPage = ({ data: { about, curators }}) => (
     {/* Second block  end--> */}
 
     {/* Third block start */}
-
-    {curators.edges.map(({ node }, index) => (
-      <div key={index} className="mb-12 md:mb-32 xl:mb-40">
-        <div className="container">
-          <div className="w-full md:w-11/12 lg:w-9/12 mx-auto">
-            <div className={`${ index % 2 ? 'flex-row-reverse flex flex-wrap md:-mx-8 items-center' : 'flex flex-wrap md:-mx-8 items-center' }`}>
-              <div className="w-full md:w-3/5 md:px-8 mb-6 md:mb-0">
-                <Img fluid={node.image.fluid} key={node.image.fluid} alt="Placeholder Image" className="border-l-12 border-pink w-full" />
-              </div>
-              <div className="w-full md:w-2/5 md:px-8">
-                <h2 className="font-serif text-2xl">{node.name} bio.</h2>
-                <span className="text-sm mb-4 lg:pr-12" dangerouslySetInnerHTML={{__html:node.blurb}}></span>
+    <div className="flex flex-wrap">
+      {curators.edges.map(({ node }, index) => (
+        <div key={index} className={`${ index % 2 ? 'block w-full flex-row order-first' : 'block flex-row w-full order-last' }`}>
+          <div className="mb-12 md:mb-32 xl:mb-40">
+              <div className="container">
+                <div className="w-full md:w-11/12 lg:w-9/12 mx-auto">
+                  <div className={`${ index % 2 ? 'flex flex-wrap md:-mx-8 items-center' : 'flex-row-reverse flex flex-wrap md:-mx-8 items-center' }`}>
+                    <div className="w-full md:w-3/5 md:px-8 mb-6 md:mb-0">
+                      <Img fluid={node.image.fluid} key={node.image.fluid} alt="Placeholder Image" className="border-l-12 border-pink w-full" />
+                    </div>
+                    <div className="w-full md:w-2/5 md:px-8">
+                      <h2 className="font-serif text-2xl">{node.name} bio.</h2>
+                      <span className="text-sm mb-4 lg:pr-12" dangerouslySetInnerHTML={{__html:node.blurb}}></span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    ))}
+      ))}
+    </div>
     {/* Third block end */}
   </div>
 )

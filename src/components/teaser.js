@@ -2,26 +2,19 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-import { motion } from "framer-motion"
 
 const Teaser = ({ img, meta, heading, linkText, small, naked, link, externalLink, caption }) => (
-  <motion.button
-    className="block w-full"
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95, opacity: 0 }}
-    transition={{
-      duration: 0.35,
-      ease: "easeInOut"
-    }}
-  >
   <div className="m-teaser relative mb-3 sm:mb-6 lg:mb-12 text-left">
-    {caption && (
+    {/* {caption && (
       <span class="absolute bottom-0 left-0 mb-4 ml-4 z-10 text-white text-left">{ caption }</span>
-    )}
+    )} */}
     {externalLink && (
-      <a href={link} target="_blank" rel="noopener noreferrer" className="no-underline" aria-label="Navigate to article">
+      <span className="block">
         <Img fluid={img} key={img} alt="Placeholder Image" className="w-full" />
-      </a>
+      </span>
+      // <a href={link} target="_blank" rel="noopener noreferrer" className="no-underline" aria-label="Navigate to article">
+      //   <Img fluid={img} key={img} alt="Placeholder Image" className="w-full" />
+      // </a>
     )}
     {!externalLink && (
       <Link to={link} className="no-underline" aria-label="Navigate to article">
@@ -44,7 +37,6 @@ const Teaser = ({ img, meta, heading, linkText, small, naked, link, externalLink
       <Link to={link} className="underline">{linkText}</Link>
     )}
   </div>
-  </motion.button>
 )
 
 
