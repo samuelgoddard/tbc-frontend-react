@@ -70,7 +70,7 @@ const StylePage = ({ data: { site, style } }) => (
                 <Img fluid={style.contentRightImage.fluid} key={style.contentRightImage.fluid} alt="Content Image" className="mb-4" />
 
                 { style.contentRightImageCaption && (
-                  <span className="text-sm">{style.contentRightImageCaption}</span>
+                  <span className="text-sm" dangerouslySetInnerHTML={{ __html: style.contentRightImageCaption }}></span>
                 )}
               </div>
             </div>
