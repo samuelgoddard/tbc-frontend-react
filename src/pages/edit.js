@@ -23,9 +23,9 @@ const EditPage = ({ data: { site, edit, edits, categories } }) => {
               <h3 className="text-black text-base font-sans font-bold">choose a category&nbsp;&nbsp;-</h3>
 
               <div className="flex flex-wrap -mx-2">
-                <div className="w-1/2 md:w-full xl:w-1/2 px-2">
+                {/* <div className="w-1/2 md:w-full xl:w-1/2 px-2">
                   <Link to={`/edit/`} activeClassName="underline" className="link py-2">all</Link>
-                </div>
+                </div> */}
                 {categories.edges.map(({ node }, index) => (
                   <div key={index} className="w-1/2 md:w-full xl:w-1/2 px-2">
                     <Link to={`/edit/${node.slug}`} className="link py-2">{node.title}</Link>
