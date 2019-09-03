@@ -3,13 +3,13 @@ import PropTypes from "prop-types"
 import Img from "gatsby-image"
 
 const Hero = ({ img, blurb, title }) => (
-  <div className="flex flex-wrap items-center">
+  <div className="flex flex-wrap items-center" id="hero" data-scroll-section>
     <div className="w-full md:w-1/2 order-2 md:order-1">
       <div className="flex flex-wrap lg:justify-center">
         <div className="w-10/12 md:w-3/4 lg:w-4/6 lg:pr-32">
-          <h1 className="font-serif text-2xl" data-scroll data-scroll-speed="3" data-scroll-position="top">{title}</h1>
+          <h1 className="font-serif text-2xl" data-scroll data-scroll-speed="3" data-scroll-position="top" data-scroll-target="#hero">{title}</h1>
           
-          <p className="text-sm" data-scroll data-scroll-speed="3" data-scroll-position="top">{blurb}</p>
+          <p className="text-sm" data-scroll data-scroll-speed="3" data-scroll-position="top" data-scroll-target="#hero">{blurb}</p>
         </div>
       </div>
     </div>
@@ -23,7 +23,7 @@ const Hero = ({ img, blurb, title }) => (
         </div>
       </div>
 
-      <div data-scroll data-scroll-speed="2" data-scroll-position="top">
+      <div data-scroll data-scroll-speed="2" data-scroll-position="top" data-scroll-target="#hero">
         <Img fluid={img} key={img} alt="Placeholder Image" className="border-l-12 border-pink" />
       </div>
     </div>

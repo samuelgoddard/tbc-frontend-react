@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 
 // import SEO from "../components/seo"
@@ -7,25 +7,10 @@ import Hero from "../components/hero"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 
-import Header from "../components/header"
-import Footer from "../components/footer"
-
-import locomotiveScroll from "locomotive-scroll";
-
 // import posed from "react-pose"
 const IndexPage = ({ data: { site, home, curators, insta } }) => {
-  const scrollRef = React.createRef();
-  useEffect(() => {
-    const scroll = new locomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-      getSpeed: true,
-    });
-  });
-
   return (
-    <div className="scroll overflow-hidden" ref={scrollRef}>
-      <Header />
+    <div>
       <SEO meta={home.seoMetaTags} favicon={site.faviconMetaTags} />
 
       {/* Hero Section */}
@@ -41,7 +26,7 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
       {/* Hero Section End */}
 
       {/* Style Edit Section */}
-      <div className="mb-12 md:mb-32 xl:mb-40" id="style-edit" data-scroll-section	>
+      <div className="mb-12 md:mb-32 xl:mb-40" id="style-edit" data-scroll-section>
         <div className="container">
           <div className="flex flex-wrap">
             <div className="w-full md:w-1/2 md:pr-16 lg:pr-28">
@@ -151,8 +136,6 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
         </div>
       </div>
       {/* Instagram Section End */}
-
-      <Footer />
     </div>
   )
 }

@@ -12,9 +12,9 @@ const EditPage = ({ data: { site, edit, edits, categories } }) => {
     {/* First block start */}
     <div className="mb-12 md:mb-32 xl:mb-40">
       <div className="container">
-        <div className="flex flex-wrap md:-mx-6">
+        <div className="flex flex-wrap md:-mx-6" id="top" data-scroll-section>
           <div className="w-full md:w-1/3 md:px-6 relative">
-            <div class="sticky top-0 pt-16 lg:pt-24">
+            <div class="sticky top-0 pt-16 lg:pt-24" data-scroll data-scroll-speed="4" data-scroll-position="top" data-scroll-target="#top">
               <div className="mb-12">
                 <h2 className="font-serif text-2xl">{ edit.heading }</h2>
                 <span className="text-sm pr-24 md:pr-6 lg:pr-24" dangerouslySetInnerHTML={{__html:edit.blurb}}></span>
