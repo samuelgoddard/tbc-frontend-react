@@ -1,12 +1,10 @@
-import React, { useEffect } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 
 import { motion, AnimatePresence } from 'framer-motion'
 
 import Header from "./header"
 import Footer from "./footer"
-
-import locomotiveScroll from "locomotive-scroll";
 
 const duration = 0.35
 
@@ -29,18 +27,8 @@ const variants = {
 }
 
 const Layout = ({ children, location }) => {
-
-  const scrollRef = React.createRef();
-  useEffect(() => {
-    const scroll = new locomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-      getSpeed: true,
-    });
-  });
-
   return (
-    <div className="scroll overflow-hidden" ref={scrollRef}>
+    <div>
       <Header />
       <AnimatePresence>
         <motion.main

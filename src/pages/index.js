@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
 // import SEO from "../components/seo"
@@ -7,10 +7,21 @@ import Hero from "../components/hero"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 
+import locomotiveScroll from "locomotive-scroll";
+
 // import posed from "react-pose"
 const IndexPage = ({ data: { site, home, curators, insta } }) => {
+  const scrollRef = React.createRef();
+  useEffect(() => {
+    const scroll = new locomotiveScroll({
+      el: scrollRef.current,
+      smooth: true,
+      getSpeed: true,
+    });
+  });
+  
   return (
-    <div>
+    <div className="scroll overflow-hidden" ref={scrollRef}>
       <SEO meta={home.seoMetaTags} favicon={site.faviconMetaTags} />
 
       {/* Hero Section */}
