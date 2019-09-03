@@ -34,8 +34,7 @@ const Layout = ({ children, location }) => {
   useEffect(() => {
     const scroll = new locomotiveScroll({
       el: scrollRef.current,
-      smooth: true,
-      smoothMobile: true,
+      smooth: true
     });
   });
 
