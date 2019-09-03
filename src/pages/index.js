@@ -30,7 +30,7 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
         <div className="container">
           <div className="flex flex-wrap">
             <div className="w-full md:w-1/2 md:pr-16 lg:pr-28">
-              <div data-scroll data-scroll-speed="4" data-scroll-position="top" data-scroll-target="#style-edit">
+              <div data-scroll data-scroll-speed="4" data-scroll-position="top" data-scroll-target="#style-edit" className="mb-12 md:mb-0">
                 <Teaser
                   heading={home.styleEdit[0].title}
                   meta={home.styleEdit[0].categories[0] ? home.styleEdit[0].categories[0].title : null}
@@ -44,13 +44,13 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
                 <div className="w-full md:w-1/2 px-3 sm:px-5 md:px-6 lg:px-10 h-full" data-scroll data-scroll-speed="2" data-scroll-position="top" data-scroll-target="#style-edit">
                   <div className="flex flex-col h-full">
                     <div className="mb-auto mt-auto">
-                      <span className="block text-brownish-grey text-xl lg:text-2xl font-serif flex-1 leading-tight mb-3 lg:mb-0">
+                      <span className="block text-brownish-grey text-xl lg:text-2xl font-serif flex-1 leading-tight mb-3 lg:mb-0 hidden md:block">
                         style
                         <span className="md:block md:ml-12 lg:ml-20">edit</span>
                       </span>
                     </div>
 
-                    <div className="mt-auto">
+                    <div className="mt-auto mb-12 md:mb-0">
                       <Teaser
                         heading={home.styleEdit[1].title}
                         meta={home.styleEdit[1].categories[0] ? home.styleEdit[1].categories[0].title : null}
@@ -62,7 +62,7 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
                     </div>
                   </div>
                 </div>
-                <div className="w-full md:w-1/2 px-3 sm:px-5 md:px-6 lg:px-10" data-scroll data-scroll-speed="3" data-scroll-position="top" data-scroll-target="#style-edit">
+                <div className="w-full md:w-1/2 px-3 sm:px-5 md:px-6 lg:px-10 mb-12 md:mb-0" data-scroll data-scroll-speed="3" data-scroll-position="top" data-scroll-target="#style-edit">
                   <Teaser 
                     heading={home.styleEdit[2].title}
                     meta={home.styleEdit[2].categories[0] ? home.styleEdit[0].categories[0].title : null}
@@ -113,7 +113,7 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
             {insta.edges.map(({ node }, index) => (
               <div 
                 key={index}
-                className={`${ index % 2 ? 'mt-12 md:mt-16 lg:mt-24 w-1/2 md:w-1/4 px-4 sm:px-5 md:px-6 lg:px-10' : 'w-1/2 md:w-1/4 px-4 sm:px-5 md:px-6 lg:px-10' }`}
+                className={`${ index % 2 ? 'mt-4 sm:mt-12 md:mt-16 lg:mt-24 w-full sm:w-1/2 md:w-1/4 px-4 sm:px-5 md:px-6 lg:px-10' : 'mt-4 sm:mt-0 w-full sm:w-1/2 md:w-1/4 px-4 sm:px-5 md:px-6 lg:px-10' }`}
                 data-scroll data-scroll-speed="1" data-scroll-position="top" data-scroll-target="#insta">
 
                 { index === 0 && (
@@ -127,7 +127,7 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
                 )}
                 { index !== 0 && (
                   <Img
-                    fixed={ node.localFile.childImageSharp.fixed } className="max-w-full insta-item object-cover"
+                    fixed={ node.localFile.childImageSharp.fixed } className="max-w-full insta-item object-cover w-full"
                   />
                 )}
               </div>

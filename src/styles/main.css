@@ -23,6 +23,7 @@ body {
 
 .insta-item {
   max-height: 250px;
+  width: 100% !important;
 }
 
 @screen md {
