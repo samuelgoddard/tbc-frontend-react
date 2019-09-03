@@ -51,6 +51,6 @@ body {
 }
 
 /* purgecss ignore */
-#___gatsby, #gatsby-focus-wrapper {
+/* #___gatsby, #gatsby-focus-wrapper {
   @apply max-h-screen max-w-full overflow-hidden;
-}
+} */
