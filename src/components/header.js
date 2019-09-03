@@ -3,7 +3,7 @@ import Logo from "./logo"
 import { Link } from "gatsby"
 
 const Header = () => (
-  <header className="container py-10 overflow-hidden" id="header" data-scroll-section>
+  <header className="container py-10 overflow-hidden relative z-40" id="header" data-scroll-section>
     <div className="flex flex-wrap items-center">
       <div data-scroll data-scroll-speed="3" data-scroll-position="top" data-scroll-target="#header">
         <Logo classList="text-beige hover:text-dark-blue-grey focus:text-dark-blue-grey transition"></Logo>

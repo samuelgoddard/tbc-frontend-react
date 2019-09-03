@@ -57,7 +57,7 @@ const StylePage = ({ data: { site, style } }) => (
               <Img fluid={style.testimonialImage.fluid} key={style.testimonialImage.fluid} alt={style.testimonialClient} className="border-l-12 border-pink w-full" />
             </div>
             <div className="w-full md:w-1/2 lg:w-2/5 md:px-8">
-              <span className="font-serif text-lg md:text-xl text-dark-blue-grey mb-6 block italic">"{style.testimonialQuote}"</span>
+              <span className="font-serif text-xl text-dark-blue-grey mb-6 block italic">"{style.testimonialQuote}"</span>
               <span className="block font-bold mb-2">Client: {style.testimonialClient}</span>
               <span className="text-sm mb-8 lg:pr-12" dangerouslySetInnerHTML={{__html: style.testimonialContent }}></span>
             </div>
