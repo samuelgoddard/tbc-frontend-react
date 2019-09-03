@@ -28,8 +28,8 @@ const variants = {
 
 const Layout = ({ children, location }) => {
   return (
-    <div>
-      <Header />
+    <>
+      {/* <Header /> */}
       <AnimatePresence>
         <motion.main
           key={location.pathname}
@@ -43,8 +43,8 @@ const Layout = ({ children, location }) => {
         </motion.main>
       </AnimatePresence>
       {/* <main>{children}</main> */}
-      <Footer />
-    </div>
+      {/* <Footer /> */}
+    </>
   )
 }
 

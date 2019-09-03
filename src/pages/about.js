@@ -3,9 +3,14 @@ import React from "react"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 
+import Header from "./header"
+import Footer from "./footer"
+
 const AboutPage = ({ data: { site, about, curators }}) => (
   <div>
     <SEO meta={about.seoMetaTags} favicon={site.faviconMetaTags} />
+
+    <Header />
     {/* First block start */}
     <div className="overflow-x-hidden mb-12 md:mb-32 xl:mb-40">
       <div className="container">
@@ -69,6 +74,7 @@ const AboutPage = ({ data: { site, about, curators }}) => (
       ))}
     </div>
     {/* Third block end */}
+    <Footer />
   </div>
 )
 

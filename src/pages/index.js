@@ -7,6 +7,9 @@ import Hero from "../components/hero"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 
+import Header from "./header"
+import Footer from "./footer"
+
 import locomotiveScroll from "locomotive-scroll";
 
 // import posed from "react-pose"
@@ -19,9 +22,10 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
       getSpeed: true,
     });
   });
-  
+
   return (
     <div className="scroll overflow-hidden" ref={scrollRef}>
+      <Header />
       <SEO meta={home.seoMetaTags} favicon={site.faviconMetaTags} />
 
       {/* Hero Section */}
@@ -147,6 +151,8 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
         </div>
       </div>
       {/* Instagram Section End */}
+
+      <Footer />
     </div>
   )
 }
