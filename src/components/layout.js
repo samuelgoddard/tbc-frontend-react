@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Header from "./header"
 import Footer from "./footer"
 
-import locomotiveScroll from "locomotive-scroll";
+// import locomotiveScroll from "locomotive-scroll";
 
 const duration = 0.35
 
@@ -30,18 +30,18 @@ const variants = {
 
 const Layout = ({ children, location }) => {
 
-  const scrollRef = React.createRef();
-  useEffect(() => {
-    const scroll = new locomotiveScroll({
-      el: scrollRef.current,
-      smooth: true
-    });
-  });
+  // const scrollRef = React.createRef();
+  // useEffect(() => {
+  //   const scroll = new locomotiveScroll({
+  //     el: scrollRef.current,
+  //     smooth: true
+  //   });
+  // });
 
   return (
-    <div className="scroll overflow-hidden" ref={scrollRef}>
+    <div>
       <Header />
-      {/* <AnimatePresence>
+      <AnimatePresence>
         <motion.main
           key={location.pathname}
           variants={variants}
@@ -49,10 +49,10 @@ const Layout = ({ children, location }) => {
           animate="enter"
           exit="exit"
           id="main"
-        > */}
+        >
           {children}
-        {/* </motion.main>
-      </AnimatePresence> */}
+        </motion.main>
+      </AnimatePresence>
       {/* <main>{children}</main> */}
       <Footer />
     </div>
