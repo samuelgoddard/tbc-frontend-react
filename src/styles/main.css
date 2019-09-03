@@ -42,3 +42,13 @@ body {
     max-height: 300px;
   }
 }
+
+.scroll {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+}
+
+#___gatsby, #gatsby-focus-wrapper {
+  @apply max-h-screen max-w-full overflow-hidden;
+}
