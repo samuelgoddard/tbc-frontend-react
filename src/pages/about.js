@@ -3,8 +3,8 @@ import React from "react"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 
-import Header from "./header"
-import Footer from "./footer"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
 const AboutPage = ({ data: { site, about, curators }}) => (
   <div>

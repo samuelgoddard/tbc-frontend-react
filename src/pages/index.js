@@ -7,8 +7,8 @@ import Hero from "../components/hero"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 
-import Header from "./header"
-import Footer from "./footer"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
 import locomotiveScroll from "locomotive-scroll";
 
