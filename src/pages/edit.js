@@ -44,7 +44,6 @@ const EditPage = ({ data: { site, edit, edits, categories } }) => {
                   img={node.image.fluid}
                   caption={node.title}
                   naked
-                  externalLink
                 />
               </div>
               ))}

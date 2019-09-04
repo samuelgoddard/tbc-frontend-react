@@ -17,9 +17,9 @@ const Teaser = ({ img, meta, heading, linkText, small, naked, link, externalLink
       </a>
     )}
     {!externalLink && (
-      <Link to={link} className="no-underline" aria-label="Navigate to article">
+      // <Link to={link} className="no-underline" aria-label="Navigate to article">
         <Img fluid={img} key={img} alt="Placeholder Image" className="w-full" />
-      </Link>
+      // </Link>
     )}
     
     {meta && (
