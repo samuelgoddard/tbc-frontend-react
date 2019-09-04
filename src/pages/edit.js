@@ -61,7 +61,7 @@ const EditPage = ({ data: { site, edit, edits, categories } }) => {
         <div className="flex flex-wrap md:-mx-8">
           <div className="w-10/12 md:w-2/3 lg:w-4/12 xl:w-3/12 md:px-8 md:mt-12 lg:mt-24 mb-12 lg:mb-0" data-scroll data-scroll-speed="3" data-scroll-position="top" data-scroll-target="#second">
             <h2 className="font-serif text-2xl">{ edit.supportingSectionHeading }</h2>
-            <span className="text-sm" dangerouslySetInnerHTML={{__html:edit.supportingSectionBlurb}}></span>
+            <div className="text-sm" dangerouslySetInnerHTML={{__html:edit.supportingSectionBlurb}}></div>
             <Link to="/about" className="underline">more about tbc</Link>
           </div>
           
