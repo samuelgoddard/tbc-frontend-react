@@ -28,7 +28,7 @@ const categoryPage = ({ data: { current, edits, categories } }) => {
 
                 {categories.edges.map(({ node }, index) => (
                   <div key={index} className="w-1/2 md:w-full xl:w-1/2 px-2">
-                    <Link to={`/edit/${node.slug}`} activeClassName="underline" className="link py-2">{node.title}</Link>
+                    <Link to={`/edit/${node.slug}`} activeClassName="underline" className="link py-1 text-sm">{node.title}</Link>
                   </div>
                 ))}
               </div>
