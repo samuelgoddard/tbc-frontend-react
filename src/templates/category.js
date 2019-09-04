@@ -35,18 +35,18 @@ const categoryPage = ({ data: { current, edits, categories } }) => {
             </div>
 
           </div>
-          <div className="w-full md:w-2/3 md:px-6">
-            <div className="flex flex-wrap -mx-3 sm:-mx-5 lg:-mx-8 mt-24 md:mt-0">
+          <div className="w-full md:w-2/3 md:px-6" data-scroll data-scroll-speed="4" data-scroll-position="top" data-scroll-target="#current">
+            <div className="flex flex-wrap -mx-3 sm:-mx-5 lg:-mx-8 md:mt-0 edit">
               {edits.edges.map(({ node }, index) => (
-                <div key={index} className={`${ index % 2 ? '-mt-12 md:-mt-32 w-1/2 px-3 sm:px-5 lg:px-8' : 'w-1/2 px-3 sm:px-5 lg:px-8' }`}>
-                  <Teaser
-                    link={node.link}
-                    img={node.image.fluid}
-                    caption={node.title}
-                    naked
-                    externalLink
-                  />
-                </div>
+                <div key={index} className={`${ index % 2 ? 'md:-mt-32 mb-12 w-full md:w-1/2 px-3 sm:px-5 lg:px-8 md:mb-42' : 'w-full md:w-1/2 px-3 sm:px-5 lg:px-8 mb-12' }`}>
+                <Teaser
+                  link={node.link}
+                  img={node.image.fluid}
+                  caption={node.title}
+                  naked
+                  externalLink
+                />
+              </div>
               ))}
             </div>
           </div>

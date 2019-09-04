@@ -41,6 +41,7 @@ module.exports = {
       '28': '7rem',
       '32': '8rem',
       '40': '10rem',
+      '42': '10.5rem',
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
@@ -209,6 +210,7 @@ module.exports = {
     maxHeight: {
       full: '100%',
       screen: '100vh',
+      teaser: '400px'
     },
     maxWidth: {
       xs: '20rem',

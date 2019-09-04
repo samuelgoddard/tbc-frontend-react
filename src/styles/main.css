@@ -55,3 +55,7 @@ body {
 /* #___gatsby, #gatsby-focus-wrapper {
   @apply max-h-screen max-w-full overflow-hidden;
 } */
+
+.edit .m-teaser, .edit .gatsby-image-wrapper {
+  @apply h-full;
+}
