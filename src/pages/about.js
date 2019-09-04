@@ -58,7 +58,7 @@ const AboutPage = ({ data: { site, about, curators }}) => (
                       <Img fluid={node.image.fluid} key={node.image.fluid} alt="Placeholder Image" className="border-l-12 border-pink w-full" />
                     </div>
                     <div className="w-full md:w-2/5 md:px-8">
-                      <h2 className="font-serif text-2xl">{node.name} bio.</h2>
+                      <h2 className="font-serif text-2xl">about {node.name}.</h2>
                       <span className="text-sm mb-4 lg:pr-12" dangerouslySetInnerHTML={{__html:node.blurb}}></span>
                     </div>
                   </div>
