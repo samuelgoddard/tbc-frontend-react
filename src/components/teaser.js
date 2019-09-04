@@ -9,12 +9,12 @@ const Teaser = ({ img, meta, heading, linkText, small, naked, link, externalLink
       <span class="absolute bottom-0 left-0 mb-4 ml-4 z-10 text-white text-left">{ caption }</span>
     )} */}
     {externalLink && (
-      <span className="block">
-        <Img fluid={img} key={img} alt="Placeholder Image" className="w-full" />
-      </span>
-      // <a href={link} target="_blank" rel="noopener noreferrer" className="no-underline" aria-label="Navigate to article">
+      // <span className="block">
       //   <Img fluid={img} key={img} alt="Placeholder Image" className="w-full" />
-      // </a>
+      // </span>
+      <a href={link} target="_blank" rel="noopener noreferrer" className="no-underline" aria-label="Navigate to article">
+        <Img fluid={img} key={img} alt="Placeholder Image" className="w-full" />
+      </a>
     )}
     {!externalLink && (
       <Link to={link} className="no-underline" aria-label="Navigate to article">

@@ -58,7 +58,7 @@ const StylePage = ({ data: { site, style } }) => (
             </div>
             <div className="w-full md:w-1/2 lg:w-2/5 md:px-8">
               <span className="font-serif text-xl text-dark-blue-grey mb-6 block italic">"{style.testimonialQuote}"</span>
-              <span className="block font-bold mb-2">Client: {style.testimonialClient}</span>
+              <span className="block font-bold mb-2 text-sm">Client: {style.testimonialClient}</span>
               <span className="text-sm mb-8 lg:pr-12" dangerouslySetInnerHTML={{__html: style.testimonialContent }}></span>
             </div>
           </div>

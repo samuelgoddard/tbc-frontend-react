@@ -13,9 +13,9 @@ const categoryPage = ({ data: { current, edits, categories } }) => {
       <div className="container">
         <div className="flex flex-wrap md:-mx-6">
           <div className="w-full md:w-1/3 md:px-6">
-            <div class="sticky top-0 pt-16 lg:pt-24">
+            <div class="sticky top-0 pt-18">
               <div className="mb-12">
-                <h2 className="font-serif text-2xl">{current.title}</h2>
+                <h2 className="font-serif text-2xl mb-0">{current.title}</h2>
                 <span className="text-sm pr-24 md:pr-6 lg:pr-24" dangerouslySetInnerHTML={{__html:current.blurb}}></span>
               </div>
 

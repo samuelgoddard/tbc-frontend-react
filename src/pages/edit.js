@@ -14,7 +14,7 @@ const EditPage = ({ data: { site, edit, edits, categories } }) => {
       <div className="container" id="current" data-scroll-section>
         <div className="flex flex-wrap md:-mx-6">
           <div className="w-full md:w-1/3 md:px-6 relative">
-            <div className="sticky top-0 pt-16 lg:pt-24" data-scroll data-scroll-sticky data-scroll-position="top" data-scroll-target="#current">
+            <div className="sticky top-0 pt-18" data-scroll data-scroll-sticky data-scroll-position="top" data-scroll-target="#current">
               <div className="mb-4">
                 <h2 className="font-serif text-2xl">{ edit.heading }</h2>
                 <span className="text-sm pr-24 md:pr-6 lg:pr-24" dangerouslySetInnerHTML={{__html:edit.blurb}}></span>
