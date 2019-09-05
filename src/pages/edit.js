@@ -133,7 +133,9 @@ query editsQuery {
       }
     }
   }
-  categories: allDatoCmsCategory {
+  categories: allDatoCmsCategory(
+    filter: { slug: { nin: ["the-edit", "launch"] } }
+  ) {
     edges {
       node {
         id

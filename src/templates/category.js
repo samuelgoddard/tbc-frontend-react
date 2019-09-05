@@ -66,7 +66,9 @@ export const query = graphql`
       title
       blurb
     }
-    categories: allDatoCmsCategory {
+    categories: allDatoCmsCategory(
+      filter: { slug: { nin: ["the-edit", "launch"] } }
+    ) {
       edges {
         node {
           id
