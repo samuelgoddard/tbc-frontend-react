@@ -15,11 +15,10 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
-        options: {
-          trackingId: "UA-148522557-1",
-        },
+      options: {
+        trackingId: "UA-148522557-1",
       },
-    }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
