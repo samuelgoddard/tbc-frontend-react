@@ -4,3 +4,20 @@ h1,.h1,h2,.h2,h3,.h3 {
     leading-snug
     mb-4;
 }
+
+.content h1,.content .h1,.content h2,.content .h2,.content h3,.content .h3 {
+  @apply 
+    text-dark-blue-grey
+    leading-snug
+    mb-4
+    font-serif
+    text-xl;
+}
+
+.content ul {
+  @apply list-disc list-inside ml-3;
+}
+
+.content ul li {
+  @apply mb-2;
+}
