@@ -14,8 +14,8 @@ const Footer = () => (
           <div className="flex flex-wrap">
             <div className="sm:ml-8" data-scroll data-scroll-speed="6" data-scroll-position="bottom" data-scroll-target="#footer" data-scroll-direction="horizontal">
               <p className="text-black text-sm leading-snug mb-0">
-                <span className="block">newsletter coming soon&hellip;</span>
-                {/* <a href="#" className="text-black underline">newsletter coming soon...</a><br/> */}
+                {/* <span className="block">newsletter coming soon&hellip;</span> */}
+                <a href="https://to-be-created.us20.list-manage.com/subscribe/post?u=ade7fb4a4f729908a49062fd3&amp;id=2b177876de" target="_blank" rel="noopener noreferrer" className="text-black underline">sign up to our newsletter</a><br/>
                 we use <Link activeClassName="underline" className="underline text-black" to="/cookies">cookies</Link>
               </p>
             </div>

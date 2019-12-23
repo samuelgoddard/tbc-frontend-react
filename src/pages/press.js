@@ -7,7 +7,7 @@ const PressPage = ({ data: { site, press } }) => (
   <div>
     <SEO meta={press.seoMetaTags} favicon={site.faviconMetaTags} />
     {/* First block start */}
-    <div className="overflow-x-hidden mb-20 md:mb-24 mt-8 lg:mt-16">
+    <div className="overflow-x-hidden mb-20 md:mb-24 mt-0">
       <div className="container">
         <div className="flex flex-wrap flex-row-reverse md:-mx-8">
           <div className="w-full lg:w-4/12 xl:w-3/12 md:px-8 order-2 lg:order-1 lg:mt-8">
@@ -60,7 +60,7 @@ const PressPage = ({ data: { site, press } }) => (
     <div className="mb-12 md:mb-32 overflow-hidden">
       <div className="container">
         <div className="flex flex-wrap md:-mx-10">
-          <div className="w-full md:w-4/12 lg:w-3/12 mb-8 md:mb-0 md:px-10">
+          <div className="w-full md:w-4/12 lg:w-3/12 mb-8 md:mb-0 md:px-10 md:mt-32 lg:mt-24">
             <h3 className="text-xl lg:text-2xl text-dark-blue-grey font-serif leading-snug pr-8">some of our case studies</h3>
             {/* @TODO Integrate this to Dato */}
             <p className="text-sm">Intro to styling service. Roof party lo-fi live-edge man braid, freegan quinoa bushwick pabst raclette hexagon locavore meh wolf. </p>

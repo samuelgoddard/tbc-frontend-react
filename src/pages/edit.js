@@ -53,7 +53,7 @@ const EditPage = ({ data: { site, edit, edits, categories } }) => {
                   <p className="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
                   {/* Integrate Mailchimp Link here */}
-                  <a href="/" className="inline-block bg-purple-brown py-3 px-8 hover:text-white focus:text-white hover:bg-dark-blue-grey focus:bg-dark-blue-grey text-white">sign up</a>
+                  <a href="https://to-be-created.us20.list-manage.com/subscribe/post?u=ade7fb4a4f729908a49062fd3&amp;id=2b177876de" target="_blank" rel="noopener noreferrer" className="inline-block bg-purple-brown py-3 px-8 hover:text-white focus:text-white hover:bg-dark-blue-grey focus:bg-dark-blue-grey text-white">sign up</a>
                 </div>
               </div>
             </div>

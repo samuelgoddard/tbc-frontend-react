@@ -7,7 +7,7 @@ const ServicesPage = ({ data: { site, serviceKey } }) => (
   <div>
     <SEO meta={serviceKey.seoMetaTags} favicon={site.faviconMetaTags} />
     {/* First block start */}
-    <div className="overflow-x-hidden mb-12 md:mb-24 mt-8 lg:mt-16">
+    <div className="overflow-x-hidden mb-12 md:mb-24 mt-0">
       <div className="container">
         <div className="flex flex-wrap flex-row-reverse md:-mx-8 items-center">
           <div className="w-full lg:w-8/12 xl:w-9/12 md:px-8 mb-6 lg:mb-0">
