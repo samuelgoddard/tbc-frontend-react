@@ -42,7 +42,7 @@ const EditPage = ({ data: { site, edit, edits, categories } }) => {
                 <Teaser
                   link={node.link}
                   img={node.image.fluid}
-                  caption={node.title}
+                  caption={node.image.title ? node.image.title : node.title }
                   naked
                 />
               </div>
@@ -81,7 +81,6 @@ const EditPage = ({ data: { site, edit, edits, categories } }) => {
               </div>
               <div className="w-1/3 self-end pl-5 sm:pl-8 md:pl-10 xl:pl-16">
                 <Img fluid={edit.supportingSectionSupportingImage.fluid} alt="Placeholder Image" />
-                {/* <lazy-image src="https://placedog.net/650/900" alt="Placeholder Image" /> */}
               </div>
             </div>
           </div>

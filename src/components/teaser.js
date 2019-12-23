@@ -4,10 +4,10 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 
 const Teaser = ({ img, meta, heading, linkText, small, naked, link, externalLink, caption }) => (
-  <div className="m-teaser relative mb-3 sm:mb-6 lg:mb-12 text-left">
-    {/* {caption && (
-      <span class="absolute bottom-0 left-0 mb-4 ml-4 z-10 text-white text-left">{ caption }</span>
-    )} */}
+  <div className="m-teaser relative mb-3 sm:mb-6 lg:mb-12 text-left group">
+    {caption && (
+      <span class="absolute bottom-0 left-0 right-0 w-full px-4 py-3 z-10 text-white text-left bg-dark-blue-grey opacity-0 group-hover:opacity-75 break-words">{ caption }</span>
+    )}
     {externalLink && (
       // <span className="block">
       //   <Img fluid={img} key={img} alt="Placeholder Image" className="w-full" />

@@ -42,7 +42,7 @@ const categoryPage = ({ data: { current, edits, categories } }) => {
                 <Teaser
                   link={node.link}
                   img={node.image.fluid}
-                  caption={node.title}
+                  caption={node.image.title ? node.image.title : node.title }
                   naked
                   externalLink
                 />

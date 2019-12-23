@@ -32,9 +32,9 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
             <div className="w-full md:w-1/2 md:pr-16 lg:pr-28">
               <div data-scroll data-scroll-speed="4" data-scroll-position="top" data-scroll-target="#style-edit" className="mb-12 md:mb-0">
                 <Teaser
-                  heading={home.styleEdit[0].title}
-                  meta={home.styleEdit[0].categories[0] ? home.styleEdit[0].categories[0].title : null}
-                  img={home.styleEdit[0].image.fluid}
+                  heading={home.styleEditNew[0].heading}
+                  meta={home.styleEditNew[0].metaText}
+                  img={home.styleEditNew[0].image.fluid}
                   link="/edit"
                 />
               </div>
@@ -52,21 +52,21 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
 
                     <div className="mt-auto mb-12 md:mb-0">
                       <Teaser
-                        heading={home.styleEdit[1].title}
-                        meta={home.styleEdit[1].categories[0] ? home.styleEdit[1].categories[0].title : null}
-                        img={home.styleEdit[1].image.fluid}
+                        heading={home.styleEditNew[1].heading}
+                        meta={home.styleEditNew[1].metaText}
+                        img={home.styleEditNew[1].image.fluid}
                         small
                         link="/edit"
-                        // link={`edit/${home.styleEdit[1].categories[0].slug ? home.styleEdit[1].categories[0].slug : null}`}
+                        // link={`edit/${home.styleEditNew[1].categories[0].slug ? home.styleEditNew[1].categories[0].slug : null}`}
                       />
                     </div>
                   </div>
                 </div>
                 <div className="w-full md:w-1/2 px-3 sm:px-5 md:px-6 lg:px-10 mb-12 md:mb-0" data-scroll data-scroll-speed="3" data-scroll-position="top" data-scroll-target="#style-edit">
                   <Teaser 
-                    heading={home.styleEdit[2].title}
-                    meta={home.styleEdit[2].categories[0] ? home.styleEdit[0].categories[0].title : null}
-                    img={home.styleEdit[2].image.fluid}
+                    heading={home.styleEditNew[2].heading}
+                    meta={home.styleEditNew[2].metaText}
+                    img={home.styleEditNew[2].image.fluid}
                     small
                     link="/edit"
                     // link={`edit/${home.styleEdit[2].categories[0].slug ? home.styleEdit[0].categories[0].slug : null}`}
@@ -168,6 +168,16 @@ export const query = graphql`
           title
           slug
         }
+        image {
+          url
+          fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+            ...GatsbyDatoCmsSizes
+          }
+        }
+      }
+      styleEditNew {
+        heading
+        metaText
         image {
           url
           fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
