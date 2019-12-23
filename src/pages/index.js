@@ -35,7 +35,7 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
                   heading={home.styleEditNew[0].heading}
                   meta={home.styleEditNew[0].metaText}
                   img={home.styleEditNew[0].image.fluid}
-                  link="/edit"
+                  link={`edit/${home.styleEditNew[0].link.slug}`}
                 />
               </div>
             </div>
@@ -56,8 +56,7 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
                         meta={home.styleEditNew[1].metaText}
                         img={home.styleEditNew[1].image.fluid}
                         small
-                        link="/edit"
-                        // link={`edit/${home.styleEditNew[1].categories[0].slug ? home.styleEditNew[1].categories[0].slug : null}`}
+                        link={`edit/${home.styleEditNew[1].link.slug}`}
                       />
                     </div>
                   </div>
@@ -68,8 +67,7 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
                     meta={home.styleEditNew[2].metaText}
                     img={home.styleEditNew[2].image.fluid}
                     small
-                    link="/edit"
-                    // link={`edit/${home.styleEdit[2].categories[0].slug ? home.styleEdit[0].categories[0].slug : null}`}
+                    link={`edit/${home.styleEditNew[2].link.slug}`}
                   />
                 </div>
               </div>
@@ -183,6 +181,9 @@ export const query = graphql`
           fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
             ...GatsbyDatoCmsSizes
           }
+        }
+        link {
+          slug
         }
       }
     }

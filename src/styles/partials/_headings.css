@@ -15,7 +15,7 @@ h1,.h1,h2,.h2,h3,.h3 {
 }
 
 .content ul {
-  @apply list-disc list-inside ml-3;
+  @apply list-disc list-outside ml-3;
 }
 
 .content ul li {

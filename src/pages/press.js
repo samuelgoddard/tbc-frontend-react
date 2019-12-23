@@ -41,7 +41,7 @@ const PressPage = ({ data: { site, press } }) => (
           <div className="flex flex-wrap md:-mx-8 lg:-mx-20 items-center">
             <div className="w-full md:w-1/2 md:px-8 md:mb-12 lg:px-20 lg:mb-20">
               <div className="md:w-9/12 xl:w-7/12 ml-auto mb-12 md:mb-0 md:-mt-12">
-                <h3 className="text-xl lg:text-2xl text-dark-blue-grey font-serif leading-snug">tbc in the press</h3>
+                <h3 className="text-xl lg:text-2xl text-dark-blue-grey font-serif leading-snug">{press.inThePressHeading}</h3>
                 {/* @TODO Integrate this to Dato */}
                 <div className="text-sm w-full">
                   <span className="w-full block break-words" dangerouslySetInnerHTML={{__html: press.inThePressBlurb }}></span>
@@ -65,7 +65,7 @@ const PressPage = ({ data: { site, press } }) => (
       <div className="container">
         <div className="flex flex-wrap md:-mx-10">
           <div className="w-full md:w-4/12 lg:w-3/12 mb-8 md:mb-0 md:px-10 md:mt-32 lg:mt-24">
-            <h3 className="text-xl lg:text-2xl text-dark-blue-grey font-serif leading-snug pr-8">some of our case studies</h3>
+            <h3 className="text-xl lg:text-2xl text-dark-blue-grey font-serif leading-snug pr-8">{press.caseStudiesHeading}</h3>
             {/* @TODO Integrate this to Dato */}
             <div className="text-sm w-full">
               <span className="w-full block break-words" dangerouslySetInnerHTML={{__html: press.caseStudiesBlurb }}></span>
@@ -127,6 +127,8 @@ export const query = graphql`
       title
       heroTitle
       heroBlurb
+      inThePressHeading
+      caseStudiesHeading
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
