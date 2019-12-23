@@ -40,7 +40,7 @@ const PressPage = ({ data: { site, press } }) => (
         <div className="md:w-10/12 mx-auto">
           <div className="flex flex-wrap md:-mx-8 lg:-mx-20 items-center">
             <div className="w-full md:w-1/2 md:px-8 md:mb-12 lg:px-20 lg:mb-20">
-              <div className="md:w-9/12 xl:w-7/12 mx-auto mb-12 md:mb-0 md:-mt-12">
+              <div className="md:w-9/12 xl:w-7/12 ml-auto mb-12 md:mb-0 md:-mt-12">
                 <h3 className="text-xl lg:text-2xl text-dark-blue-grey font-serif leading-snug">tbc in the press</h3>
                 {/* @TODO Integrate this to Dato */}
                 <p className="text-sm">Intro to styling service. Roof party lo-fi live-edge man braid, freegan quinoa bushwick pabst raclette hexagon locavore meh wolf. </p>
@@ -48,8 +48,10 @@ const PressPage = ({ data: { site, press } }) => (
             </div>
             {press.pressArticles.map(({ image, url }, index) => (
               <div key={index} className={`${ index % 2 ? 'md:-mt-56 lg:-mt-64 w-full md:w-1/2 md:px-8 mb-8 md:mb-12 lg:px-20 lg:mb-20' : 'w-full md:w-1/2 md:px-8 mb-8 md:mb-12 lg:px-20 lg:mb-20'}`}>
-                <Img fluid={image.fluid} className="w-auto mb-2" />
-                <a href={ url } target="_blank" rel="noreferrer noopener" className="text-purple-brown text-sm underline">{ url }</a>
+                <div className={index === 2 ? 'w-full md:w-3/4 lg:w-2/3' : 'w-full'}>
+                  <Img fluid={image.fluid} className="w-auto mb-2" />
+                  <a href={ url } target="_blank" rel="noreferrer noopener" className="text-purple-brown text-sm underline">{ url }</a>
+                </div>
               </div>
             ))}
           </div>
