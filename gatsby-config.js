@@ -55,14 +55,15 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram`,
       options: {
+        type: `user-profile`,
         username: `tbc.uk`,
-      },
+      },  
     },
-    // {
-    //   resolve: `gatsby-plugin-layout`,
-    //   options: {
-    //       component: require.resolve(`./src/components/layout.js`)
-    //   }
-    // }
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+          component: require.resolve(`./src/components/layout.js`)
+      }
+    }
   ],
 }
