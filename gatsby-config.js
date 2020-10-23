@@ -52,18 +52,18 @@ module.exports = {
         apiToken: '986c1f6a5143e089716a40c7a0b248',
       },
     },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        type: `user-profile`,
-        username: `tbc.uk`,
-      },  
-    },
-    {
-      resolve: `gatsby-plugin-layout`,
-      options: {
-          component: require.resolve(`./src/components/layout.js`)
-      }
-    }
+    // {
+    //   resolve: `gatsby-source-instagram`,
+    //   options: {
+    //     type: `user-profile`,
+    //     username: `tbc.uk`,
+    //   },  
+    // },
+    // {
+    //   resolve: `gatsby-plugin-layout`,
+    //   options: {
+    //       component: require.resolve(`./src/components/layout.js`)
+    //   }
+    // }
   ],
 }
