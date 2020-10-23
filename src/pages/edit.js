@@ -50,7 +50,6 @@ const EditPage = ({ data: { site, edit, edits, categories } }) => {
               <div className="w-full md:w-1/2 px-3 sm:px-5 lg:px-8 mb-12 text-center">
                 <div className="bg-white p-6 md:p-8 lg:p-10">
                   <span className="text-xl lg:text-2xl text-dark-blue-grey font-serif leading-snug mb-3 block">stay updated with the latest entries</span>
-                  <p className="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
                   {/* Integrate Mailchimp Link here */}
                   <a href="https://to-be-created.us20.list-manage.com/subscribe/post?u=ade7fb4a4f729908a49062fd3&amp;id=2b177876de" target="_blank" rel="noopener noreferrer" className="inline-block bg-purple-brown py-3 px-8 hover:text-white focus:text-white hover:bg-dark-blue-grey focus:bg-dark-blue-grey text-white">sign up</a>
