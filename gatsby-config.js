@@ -52,13 +52,12 @@ module.exports = {
         apiToken: '986c1f6a5143e089716a40c7a0b248',
       },
     },
-    // {
-    //   resolve: `gatsby-source-instagram`,
-    //   options: {
-    //     type: `user-profile`,
-    //     username: `tbc.uk`,
-    //   },  
-    // },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `3123926007`,
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-layout`,
     //   options: {
