@@ -75,8 +75,7 @@ export const query = graphql`
       blurb
     }
     categories: allDatoCmsCategory(
-      filter: { slug: { nin: ["the-edit", "launch"] } }
-    ) {
+      filter: { slug: { nin: ["the-edit", "launch"] }}) {
       edges {
         node {
           id
@@ -85,7 +84,7 @@ export const query = graphql`
         }
       }
     }
-    edits: allDatoCmsEdit(filter: {categories: {elemMatch: {slug: {eq: $slug}}}}) {
+    edits: allDatoCmsEdit(filter: {categories: { elemMatch: {slug: {eq: $slug }}}}, sort: { fields: [position], order: ASC }) {
       edges {
         node {
           id
