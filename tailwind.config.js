@@ -15,13 +15,14 @@ module.exports = {
       white: '#fff',
       'light-grey-blue': '#b4b7ba',
       'off-white': '#f9f4f1',
-      'dark-blue-grey': '#15403d',
+      'dark-blue-grey': '#C0AB8C',
       'purplish-grey': '#625d60',
       'purple-brown': '#592b3b',
       'brownish-grey': '#79695d',
       'beige': '#dcccc1',
       'pink': '#e5d1d1',
       'dark-peach': '#e5745d',
+      'beige': '#C0AB8C'
     },
     spacing: {
       px: '1px',
