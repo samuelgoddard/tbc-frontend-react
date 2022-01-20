@@ -8,7 +8,7 @@ import Img from "gatsby-image"
 import SEO from "../components/seo"
 
 // import posed from "react-pose"
-const IndexPage = ({ data: { site, home, curators, insta } }) => {
+const IndexPage = ({ data: { site, home, curators } }) => {
   return (
     <div>
       <SEO meta={home.seoMetaTags} favicon={site.faviconMetaTags} />
@@ -105,7 +105,7 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
       {/* End Meet the cutator */}
 
       {/* Instagram Section */}
-      <div className="mb-12 md:mb-32 xl:mb-40" id="insta" data-scroll-section>
+      {/* <div className="mb-12 md:mb-32 xl:mb-40" id="insta" data-scroll-section>
         <div className="container">
           <div className="flex flex-wrap md:h-full -mx-4 sm:-mx-5 md:-mx-6 lg:-mx-10">
             {insta.edges.map(({ node }, index) => (
@@ -132,7 +132,7 @@ const IndexPage = ({ data: { site, home, curators, insta } }) => {
             ))}  
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Instagram Section End */}
     </div>
   )
@@ -145,20 +145,6 @@ export const query = graphql`
     site: datoCmsSite {
       faviconMetaTags {
         ...GatsbyDatoCmsFaviconMetaTags
-      }
-    }
-    insta: allInstaNode(limit: 12) {
-      edges {
-        node {
-          id
-          localFile {
-            childImageSharp {
-              fixed(width: 500, height: 500) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
-        }
       }
     }
     home: datoCmsHome {
