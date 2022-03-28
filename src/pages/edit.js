@@ -75,7 +75,7 @@ const EditPage = ({ data: { site, edit, edits, categories } }) => {
           <div className="w-full lg:w-8/12 xl:w-9/12 md:px-8">
             <div className="flex flex-wrap" data-scroll data-scroll-speed="3" data-scroll-position="top" data-scroll-target="#second">
               <div className="w-2/3">
-                <Img fluid={edit.supportingSectionImage.fluid} alt="Placeholder Image" className="border-l-12 border-pink w-full" />
+                <Img fluid={edit.supportingSectionImage.fluid} alt="Placeholder Image" className="border-l-12 border-border w-full" />
 
               </div>
               <div className="w-1/3 self-end pl-5 sm:pl-8 md:pl-10 xl:pl-16">

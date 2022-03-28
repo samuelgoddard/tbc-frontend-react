@@ -16,7 +16,7 @@ const PressPage = ({ data: { site, press } }) => (
           </div>
           <div className="w-full lg:w-8/12 xl:w-9/12 md:px-8 mb-6 lg:mb-0 order-1 lg:order-2">
             <div className="flex flex-wrap flex-row-reverse">
-              <Img fluid={press.heroImage.fluid} key={press.heroImage.fluid} alt="Placeholder Image" className="w-full border-l-12 border-beige lg:mb-8" />
+              <Img fluid={press.heroImage.fluid} key={press.heroImage.fluid} alt="Placeholder Image" className="w-full border-l-12 border-border lg:mb-8" />
             </div>
           </div>
         </div>

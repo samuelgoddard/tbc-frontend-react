@@ -22,7 +22,8 @@ module.exports = {
       'beige': '#dcccc1',
       'pink': '#e5d1d1',
       'dark-peach': '#e5745d',
-      'beige': '#C0AB8C'
+      'beige': '#C0AB8C',
+      'border': '#DBD9D7'
     },
     spacing: {
       px: '1px',

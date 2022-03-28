@@ -24,7 +24,7 @@ const Hero = ({ img, blurb, title }) => (
       </div>
 
       <div data-scroll data-scroll-speed="2" data-scroll-position="top" data-scroll-target="#hero">
-        <Img fluid={img} key={img} alt="Placeholder Image" className="border-l-12 border-beige" />
+        <Img fluid={img} key={img} alt="Placeholder Image" className="border-l-12 border-border" />
       </div>
     </div>
   </div>

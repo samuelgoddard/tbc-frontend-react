@@ -12,7 +12,7 @@ const ServicesPage = ({ data: { site, serviceKey } }) => (
         <div className="flex flex-wrap flex-row-reverse md:-mx-8 items-center">
           <div className="w-full lg:w-8/12 xl:w-9/12 md:px-8 mb-6 lg:mb-0">
             <div className="flex flex-wrap flex-row-reverse">
-                <Img fluid={serviceKey.heroImage.fluid} key={serviceKey.heroImage.fluid} alt="Placeholder Image" className="w-full border-l-12 border-beige lg:mb-8" />
+                <Img fluid={serviceKey.heroImage.fluid} key={serviceKey.heroImage.fluid} alt="Placeholder Image" className="w-full border-l-12 border-border lg:mb-8" />
             </div>
           </div>
 
@@ -83,7 +83,7 @@ const ServicesPage = ({ data: { site, serviceKey } }) => (
             </div>
 
             <div className="w-full md:w-3/5 md:px-8 mb-6 md:mb-0 order-1 md:order-2">
-              <Img fluid={serviceKey.footerImage.fluid} key={serviceKey.footerImage.fluid} alt={serviceKey.footerTitle} className="border-l-12 border-beige w-full" />
+              <Img fluid={serviceKey.footerImage.fluid} key={serviceKey.footerImage.fluid} alt={serviceKey.footerTitle} className="border-l-12 border-border w-full" />
             </div>
           </div>
         </div>

@@ -16,7 +16,7 @@ const AboutPage = ({ data: { site, about, curators }}) => (
                 <Img fluid={about.heroSupportingImage.fluid} key={about.heroSupportingImage.fluid} alt="Placeholder Image" />
               </div>
               <div className="w-2/3">
-              <Img fluid={about.heroImage.fluid} key={about.heroImage.fluid} alt="Placeholder Image" className="border-l-12 border-beige w-full" />
+              <Img fluid={about.heroImage.fluid} key={about.heroImage.fluid} alt="Placeholder Image" className="border-l-12 border-border w-full" />
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@ const AboutPage = ({ data: { site, about, curators }}) => (
                 <div className="w-full md:w-11/12 lg:w-9/12 mx-auto">
                   <div className={`${ index % 2 ? 'flex flex-wrap md:-mx-8 items-center' : 'flex-row-reverse flex flex-wrap md:-mx-8 items-center' }`}>
                     <div className="w-full md:w-3/5 md:px-8 mb-6 md:mb-0">
-                      <Img fluid={node.image.fluid} key={node.image.fluid} alt="Placeholder Image" className="border-l-12 border-beige w-full" />
+                      <Img fluid={node.image.fluid} key={node.image.fluid} alt="Placeholder Image" className="border-l-12 border-border w-full" />
                     </div>
                     <div className="w-full md:w-2/5 md:px-8">
                       <h2 className="font-serif text-2xl">about {node.name}.</h2>
