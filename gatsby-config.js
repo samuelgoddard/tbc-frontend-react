@@ -24,7 +24,7 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         // ...other options...
-        failOnError: false,
+        failOn: 'none',
       },
     },
     `gatsby-plugin-offline`,
