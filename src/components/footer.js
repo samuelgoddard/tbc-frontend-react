@@ -21,7 +21,7 @@ const Footer = () => (
             </div>
             <div className="ml-auto text-right" data-scroll data-scroll-speed="-6" data-scroll-position="bottom" data-scroll-target="#footer" data-scroll-direction="horizontal">
               <p className="text-black text-sm leading-snug mb-0">
-                <a href="https://www.instagram.com/tbc.uk/" target="blank" rel="noopener noreferer" className="text-black underline block">instagram</a>
+                <a href="https://www.instagram.com/tobecreated.uk" target="blank" rel="noopener noreferer" className="text-black underline block">instagram</a>
                 <a href="https://www.pinterest.co.uk/charlottewarbs/" target="blank" rel="noopener noreferer" className="text-black underline block">pinterest</a>
               </p>
             </div>
