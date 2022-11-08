@@ -36,14 +36,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icons: [
-          {
-            src: `static/favicon.png`,
-            sizes: `72x72`,
-            type: `image/png`
-          }
-        ]
-      }
+        icon: `src/images/favicon.jpg`, // This path is relative to the root of the site.
+      },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-postcss`,
