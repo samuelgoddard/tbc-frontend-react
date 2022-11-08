@@ -27,19 +27,6 @@ module.exports = {
         failOn: `none`,
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `tbc-website`,
-        short_name: `tbc`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-postcss`,
     { 
       resolve: `gatsby-plugin-purgecss`,
@@ -56,12 +43,6 @@ module.exports = {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: '986c1f6a5143e089716a40c7a0b248',
-      },
-    },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `3123926007`,
       },
     },
     // {
