@@ -13,7 +13,7 @@ const Header = () => (
           <div role="navigation" aria-label="Site Navigation">
             <nav data-scroll data-scroll-speed="3" data-scroll-position="top" data-scroll-target="#header">
               <ul className="flex items-end sm:items-center">
-                <li><Link activeClassName="underline" className="block p-2 sm:mx-2" to="/edit">the edit</Link></li>
+                {/* <li><Link activeClassName="underline" className="block p-2 sm:mx-2" to="/edit">the edit</Link></li> */}
                 <li><Link activeClassName="underline" className="block p-2 sm:mx-2" to="/services">services</Link></li>
                 <li><Link activeClassName="underline" className="block p-2 sm:mx-2" to="/press">press</Link></li>
                 <li><Link activeClassName="underline" className="block p-2 sm:mx-2" to="/about">about</Link></li>
