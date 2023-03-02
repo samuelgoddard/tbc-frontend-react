@@ -29,7 +29,7 @@ const IndexPage = ({ data: { site, home, curators } }) => {
       <div className="mb-12 md:mb-32 xl:mb-40" id="style-edit" data-scroll-section>
         <div className="container">
           <div className="flex flex-wrap">
-            <div className="w-full md:w-1/2 md:pr-16 lg:pr-28">
+            {/* <div className="w-full md:pr-16 lg:pr-28">
               <div data-scroll data-scroll-speed="4" data-scroll-position="top" data-scroll-target="#style-edit" className="mb-12 md:mb-0">
                 <Teaser
                   heading={home.styleEditNew[0].heading}
@@ -38,8 +38,8 @@ const IndexPage = ({ data: { site, home, curators } }) => {
                   link={`edit/${home.styleEditNew[0].link.slug}`}
                 />
               </div>
-            </div>
-            <div className="w-full md:w-1/2">
+            </div> */}
+            <div className="w-full">
               <div className="flex flex-wrap md:h-full -mx-3 sm:-mx-5 md:-mx-6 lg:-mx-10">
                 <div className="w-full md:w-1/2 px-3 sm:px-5 md:px-6 lg:px-10 h-full" data-scroll data-scroll-speed="2" data-scroll-position="top" data-scroll-target="#style-edit">
                   <div className="flex flex-col h-full">
